@@ -185,17 +185,18 @@
   .section-dot.active{background:color-mix(in srgb,var(--card) 74%,transparent);
     box-shadow:0 7px 18px var(--shadow),inset 0 1px 0 rgba(255,255,255,.16)}
   .section-dot.active .section-dot-label{font-weight:650}
-  .mobile-section-nav{display:none;position:fixed;left:12px;bottom:12px;z-index:46;width:min(230px,calc(100vw - 78px))}
+  .mobile-bottom-dock{display:contents}
+  .mobile-section-nav{display:none}
   .mobile-section-button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:46px;
-    padding:8px 12px;border:1px solid var(--line);border-radius:23px;background:var(--counter-bg);color:var(--ink);
-    font:600 13px/1.2 inherit;cursor:pointer;box-shadow:0 6px 20px var(--shadow);backdrop-filter:blur(10px)}
+    padding:8px 12px;border:0;border-radius:22px;background:transparent;color:var(--ink);
+    font:600 13px/1.2 inherit;cursor:pointer}
   .mobile-section-button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .mobile-section-meta{color:var(--muted);font-size:11px;font-weight:500}
   .mobile-section-chevron{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;transition:.15s}
   .mobile-section-button[aria-expanded="true"] .mobile-section-chevron{transform:rotate(180deg)}
   .mobile-progress-track{position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--line);border-radius:3px;overflow:hidden}
   .mobile-progress-fill{display:block;width:0;height:100%;background:var(--accent)}
-  .mobile-section-menu{position:absolute;left:0;bottom:54px;width:100%;padding:6px;border:1px solid var(--line);
+  .mobile-section-menu{position:absolute;left:-4px;bottom:59px;width:calc(100% + 4px);padding:6px;border:1px solid var(--line);
     border-radius:14px;background:var(--counter-bg);box-shadow:0 10px 30px var(--shadow);backdrop-filter:blur(12px)}
   .mobile-section-menu[hidden]{display:none}
   .mobile-section-menu a{display:block;min-height:44px;padding:11px 12px;border-radius:9px;color:var(--muted);
@@ -210,11 +211,19 @@
   .cbadge b{color:var(--good);font-size:14px}
   @media(max-width:1240px){
     .section-rail{display:none}
-    .mobile-section-nav{display:block}
+    main{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+    .mobile-bottom-dock{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:46;
+      display:flex;align-items:center;width:min(360px,calc(100vw - 20px));min-height:54px;padding:4px;
+      transform:translateX(-50%);border:1px solid color-mix(in srgb,var(--line) 82%,transparent);border-radius:28px;
+      background:color-mix(in srgb,var(--counter-bg) 88%,transparent);box-shadow:0 10px 32px var(--shadow),inset 0 1px 0 rgba(255,255,255,.2);
+      -webkit-backdrop-filter:blur(18px) saturate(135%);backdrop-filter:blur(18px) saturate(135%)}
+    .mobile-section-nav{display:block;position:relative;flex:1;min-width:0}
+    .mobile-bottom-dock #top{position:relative;right:auto;bottom:auto;z-index:auto;flex:0 0 46px;width:46px;height:46px;
+      border:0;border-left:1px solid var(--line);border-radius:0 23px 23px 0;background:transparent;box-shadow:none}
     #counter{display:none}
   }
   @media(prefers-reduced-transparency:reduce){
-    .section-rail,.mobile-section-button,.mobile-section-menu{background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none}
+    .section-rail,.mobile-bottom-dock,.mobile-section-menu{background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none}
   }
   /* back to top */
   #top{position:fixed;right:18px;bottom:18px;z-index:45;width:44px;height:44px;border-radius:50%;
@@ -224,7 +233,7 @@
   #top:hover{border-color:var(--accent);color:var(--accent)}
   @media(max-width:600px){
     header{padding:15px 10px 11px}
-    main{padding:14px 10px 32px}
+    main{padding:14px 10px calc(96px + env(safe-area-inset-bottom,0px))}
     section{padding:16px 13px;margin:12px 0;border-radius:14px;scroll-margin-top:104px}
     h1{font-size:20px}
     .headline{align-items:flex-start;flex-direction:row;gap:10px}
@@ -237,7 +246,6 @@
     .formula{justify-content:flex-start;min-height:58px;padding:10px 12px}
     .formula math{font-size:1.08rem}
     .column-calc{padding:14px 18px}
-    #top{right:12px;bottom:12px;width:42px;height:42px}
   }
 </style>
 </head>
@@ -275,17 +283,20 @@
   <a class="section-dot" href="#methodology" aria-label="Методологія"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">08</span><span>Методологія</span><span class="section-progress-value"></span></span></a>
   <a class="section-dot" href="#drill" aria-label="Практика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">09</span><span>Практика</span><span class="section-progress-value"></span></span></a>
 </nav>
-<div class="mobile-section-nav">
-  <button id="mobileSectionButton" class="mobile-section-button" type="button" aria-expanded="false" aria-controls="mobileSectionMenu">
-    <span id="mobileSectionName">План</span>
-    <span class="mobile-section-meta"><span id="mobileSectionPercent">0%</span></span>
-    <svg class="mobile-section-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
-    <span class="mobile-progress-track" aria-hidden="true"><span id="mobileProgressFill" class="mobile-progress-fill"></span></span>
-  </button>
-  <div id="mobileSectionMenu" class="mobile-section-menu" hidden>
-    <a href="#plan">01 · План</a><a href="#format">02 · Формат</a><a href="#verbal">03 · Вербальний</a><a href="#logic">04 · Логіка</a>
-    <a href="#arithmetic">05 · Арифметика</a><a href="#misc">06 · Інше</a><a href="#eng">07 · Англійська</a><a href="#methodology">08 · Методологія</a><a href="#drill">09 · Практика</a>
+<div class="mobile-bottom-dock">
+  <div class="mobile-section-nav">
+    <button id="mobileSectionButton" class="mobile-section-button" type="button" aria-expanded="false" aria-controls="mobileSectionMenu">
+      <span id="mobileSectionName">План</span>
+      <span class="mobile-section-meta"><span id="mobileSectionPercent">0%</span></span>
+      <svg class="mobile-section-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+      <span class="mobile-progress-track" aria-hidden="true"><span id="mobileProgressFill" class="mobile-progress-fill"></span></span>
+    </button>
+    <div id="mobileSectionMenu" class="mobile-section-menu" hidden>
+      <a href="#plan">01 · План</a><a href="#format">02 · Формат</a><a href="#verbal">03 · Вербальний</a><a href="#logic">04 · Логіка</a>
+      <a href="#arithmetic">05 · Арифметика</a><a href="#misc">06 · Інше</a><a href="#eng">07 · Англійська</a><a href="#methodology">08 · Методологія</a><a href="#drill">09 · Практика</a>
+    </div>
   </div>
+  <button id="top" title="Нагору" aria-label="Нагору">↑</button>
 </div>
 <div id="counter"><span class="cbadge">Опрацьовано задач: <b id="cnum">0</b> / <span id="ctot">0</span></span></div>
 
@@ -1140,8 +1151,6 @@
 
 <div class="foot">Складено 14.07.2026 · матеріал для швидкої підготовки · не офіційний документ УЦОЯО</div>
 </main>
-
-<button id="top" title="Нагору" aria-label="Нагору">↑</button>
 
 <script>
 (function(){
