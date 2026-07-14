@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЄВІ + ЄВВ 2026 — Повна підготовка</title>
+<script>
+(function(){
+  var key='evi-tznk-guide:theme:v1', theme='';
+  try{ theme=localStorage.getItem(key)||''; }catch(e){}
+  if(theme!=='sage' && theme!=='focus'){
+    theme=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches?'focus':'sage';
+  }
+  document.documentElement.setAttribute('data-theme',theme);
+})();
+</script>
+<style>
+  :root,[data-theme="focus"]{
+    --content-width:860px;
+    color-scheme:dark;
+    --bg:#0f1613;--bg2:#121b17;--card:#18201c;--card-soft:#1b2520;--card2:#202a25;
+    --ink:#e6eee8;--strong:#f5faf6;--muted:#a5b2aa;--accent:#78a797;--accent2:#9ac0b3;
+    --accent-ink:#0c1712;--good:#91b69d;--warn:#c4b184;--pink:#bfa4b2;--line:#304039;
+    --glow:rgba(120,167,151,.24);--header-top:rgba(15,22,19,.97);--header-bottom:rgba(15,22,19,.86);
+    --section-fade:rgba(24,32,28,.76);--code-bg:#0b110e;--code-ink:#c4ddd2;
+    --box-bg:#171f1b;--box-border:#34423b;--box-title:#dce7e0;
+    --good-bg:#17201b;--good-border:#3b5144;--good-title:#bfd0c4;
+    --warn-bg:#1d1c17;--warn-border:#4a4435;--warn-title:#d0c4aa;
+    --pink-bg:#1d191c;--pink-border:#493b43;--pink-title:#d0bdc7;
+    --row-even:rgba(255,255,255,.018);--shadow:rgba(0,0,0,.25);--counter-bg:rgba(24,32,28,.94);
+    --wash-1:rgba(120,167,151,.09);--wash-2:rgba(154,192,179,.06);
+  }
+  [data-theme="sage"]{
+    color-scheme:light;
+    --bg:#f2f5ef;--bg2:#e9eee8;--card:#fbfcfa;--card-soft:#f7f9f6;--card2:#e9eee9;
+    --ink:#202b26;--strong:#142019;--muted:#5a6861;--accent:#416f62;--accent2:#648d7e;
+    --accent-ink:#fff;--good:#4e735d;--warn:#80673f;--pink:#775d69;--line:#d2dcd5;
+    --glow:rgba(65,111,98,.18);--header-top:rgba(242,245,239,.97);--header-bottom:rgba(242,245,239,.88);
+    --section-fade:rgba(251,252,250,.80);--code-bg:#e6ece7;--code-ink:#244a3f;
+    --box-bg:#f6f8f5;--box-border:#d1dbd4;--box-title:#34463e;
+    --good-bg:#f0f5f0;--good-border:#bdcfc1;--good-title:#405f4b;
+    --warn-bg:#f4f1e8;--warn-border:#c9bea3;--warn-title:#6f5938;
+    --pink-bg:#f4eef1;--pink-border:#cfbec6;--pink-title:#6b515e;
+    --row-even:rgba(32,43,38,.028);--shadow:rgba(31,48,39,.10);--counter-bg:rgba(251,252,250,.95);
+    --wash-1:rgba(93,138,122,.10);--wash-2:rgba(118,151,137,.07);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:
+      radial-gradient(1200px 600px at 15% -5%,var(--wash-1),transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%,var(--wash-2),transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+
+  header{padding:22px 20px 16px;position:sticky;top:0;z-index:40;
+    background:linear-gradient(180deg,var(--header-top),var(--header-bottom));
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hwrap{max-width:var(--content-width);margin:0 auto}
+  .headline{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+  h1{margin:0;font-size:23px;letter-spacing:-.3px;color:var(--strong)}
+  .sub{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .exam-dates{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+  .exam-date{display:inline-flex;align-items:center;gap:7px;min-height:30px;padding:4px 10px;border:1px solid var(--line);
+    border-radius:15px;background:var(--card2);color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+  .exam-date b{color:var(--ink);font-size:11px;letter-spacing:.04em}
+  .theme-toggle{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;padding:0;
+    border:1px solid var(--line);border-radius:50%;background:var(--card2);color:var(--accent);
+    cursor:pointer;box-shadow:0 4px 12px var(--shadow);transition:background .15s,border-color .15s,transform .15s}
+  .theme-toggle:hover{border-color:var(--accent);background:var(--card)}
+  .theme-toggle:active{transform:scale(.96)}
+  .theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .theme-icon{display:none;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round}
+  [data-theme="sage"] .theme-icon-moon,[data-theme="focus"] .theme-icon-sun{display:block}
+  main{max-width:calc(var(--content-width) + 36px);margin:0 auto;padding:22px 18px 40px}
+  section{background:linear-gradient(180deg,var(--card),var(--section-fade));
+    border:1px solid var(--line);border-radius:18px;padding:22px;margin:18px 0;
+    box-shadow:0 8px 30px var(--shadow);scroll-margin-top:120px}
+  h2{margin:0 0 12px;font-size:20px;display:flex;align-items:center;gap:9px;letter-spacing:-.2px}
+  h3{margin:20px 0 7px;font-size:16px;color:var(--accent);font-weight:650}
+  .tag{font-size:10.5px;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:var(--accent-ink);padding:3px 9px;border-radius:20px;font-weight:700;letter-spacing:.2px}
+  p{margin:9px 0}
+  ul,ol{margin:9px 0 9px 4px;padding-left:20px}
+  li{margin:6px 0}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code-bg);
+    padding:1px 6px;border-radius:6px;font-size:14px;color:var(--code-ink);border:1px solid var(--line)}
+  pre{background:var(--code-bg);border:1px solid var(--line);border-radius:12px;padding:15px;
+    overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--code-ink);
+    line-height:1.45;white-space:pre;box-shadow:inset 0 0 0 1px var(--row-even)}
+  math{font-family:"STIX Two Math","Cambria Math","Times New Roman",serif;color:var(--strong)}
+  .formula{display:flex;align-items:center;justify-content:center;min-height:68px;margin:12px 0;padding:12px 16px;
+    overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);color:var(--code-ink)}
+  .formula math{font-size:1.22rem}
+  .math-inline{display:inline-flex;align-items:center;vertical-align:-.16em;margin:0 .12em}
+  .math-inline math{font-size:1.04em}
+  .column-calc{display:inline-block;max-width:100%;margin:12px 0;padding:18px 22px;border:1px solid var(--line);
+    border-radius:14px;background:var(--code-bg);color:var(--code-ink);box-shadow:inset 0 0 0 1px var(--row-even)}
+  .division-layout{display:grid;grid-template-columns:auto auto;justify-content:start;align-items:start;
+    font:600 1.18rem/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+  .division-left{min-width:5ch;text-align:right;padding-right:.45ch}
+  .division-right{min-width:4ch;border-left:2px solid currentColor}
+  .division-divisor{padding:0 .55ch;border-bottom:2px solid currentColor}
+  .division-quotient{padding:0 .55ch}
+  .division-steps{grid-column:1;width:4ch;margin-left:auto;margin-right:.45ch;font-weight:500}
+  .division-step{position:relative;width:var(--span);margin-left:var(--shift);height:1.35em;text-align:right}
+  .division-step.subtract::before{content:"−";position:absolute;left:-.9ch}
+  .division-step.rule{height:.42em;border-top:2px solid currentColor;margin-top:.06em}
+  .multiplication-layout{width:7ch;font:600 1.18rem/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-variant-numeric:tabular-nums;text-align:right}
+  .calc-rule{border-top:2px solid currentColor;margin:.12em 0}
+  .calc-note{margin-top:10px;color:var(--muted);font-size:12px}
+  .box{background:var(--box-bg);border:1px solid var(--box-border);border-radius:10px;
+    padding:14px 16px;margin:13px 0;box-shadow:0 8px 22px var(--shadow)}
+  .box > b:first-child{color:var(--box-title)}
+  .box.good{border-color:var(--good-border);background:var(--good-bg)}
+  .box.good > b:first-child{color:var(--good-title)}
+  .box.warn{border-color:var(--warn-border);background:var(--warn-bg)}
+  .box.warn > b:first-child{color:var(--warn-title)}
+  .box.pink{border-color:var(--pink-border);background:var(--pink-bg)}
+  .box.pink > b:first-child{color:var(--pink-title)}
+  .kv{color:var(--muted);font-size:14px}
+  .kv a{color:var(--accent)}
+  b,strong{color:var(--strong)}
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;
+    padding:11px 15px;margin:11px 0;transition:.15s}
+  details:hover{border-color:var(--accent)}
+  details[open]{border-color:var(--good);background:linear-gradient(180deg,var(--card2),var(--good-bg))}
+  summary{cursor:pointer;font-weight:600;color:var(--ink);list-style:none;user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▶";display:inline-block;font-size:10px;color:var(--muted);
+    margin-right:8px;transition:.2s}
+  details[open] summary::before{transform:rotate(90deg);color:var(--good)}
+  details.completed{border-color:var(--good-border);background:color-mix(in srgb,var(--good-bg) 86%,var(--card2))}
+  details.completed summary{color:var(--good-title)}
+  details.completed summary::after{content:"✓";float:right;display:grid;place-items:center;width:20px;height:20px;
+    margin-left:10px;border-radius:50%;background:var(--good);color:var(--accent-ink);font-size:12px;font-weight:800}
+  details.completed[open]{background:linear-gradient(180deg,var(--good-bg),var(--card2));border-color:var(--good)}
+  .ans{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);color:var(--ink)}
+  .practice-group{margin:20px 0 28px}
+  .practice-group:first-of-type{margin-top:14px}
+  .practice-group-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;
+    padding:10px 2px 8px;border-bottom:1px solid var(--line);color:var(--strong)}
+  .practice-group-count{flex:0 0 auto;padding:3px 9px;border-radius:12px;background:var(--card2);
+    color:var(--muted);font-size:11px;font-weight:600}
+  .table-scroll{width:100%;margin:11px 0;overflow-x:auto;border:1px solid var(--line);
+    border-radius:10px;-webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse;width:100%;min-width:100%;margin:0;font-size:14px;display:table}
+  th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:8px 10px;text-align:left}
+  tr td:last-child,tr th:last-child{border-right:none}
+  tr:last-child td{border-bottom:none}
+  th{background:var(--card2);color:var(--strong);font-weight:650}
+  tbody tr:nth-child(even) td,table tr:nth-child(even) td{background:var(--row-even)}
+  .chk{display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+  .foot{color:var(--muted);font-size:12.5px;text-align:center;padding:26px 12px}
+  .pill{display:inline-block;background:var(--card2);border:1px solid var(--line);
+    border-radius:20px;padding:3px 11px;font-size:13px;margin:3px 4px 3px 0}
+  hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+  .big{font-size:15px}
+  /* floating section navigation */
+  .section-rail{position:fixed;left:max(18px,calc((100vw - var(--content-width))/4 - 94px));top:50%;z-index:38;
+    display:flex;flex-direction:column;gap:2px;width:188px;transform:translateY(-50%);padding:11px 9px;
+    border:1px solid color-mix(in srgb,var(--line) 76%,transparent);border-radius:24px;
+    background:color-mix(in srgb,var(--counter-bg) 74%,transparent);box-shadow:0 14px 38px var(--shadow),inset 0 1px 0 rgba(255,255,255,.18);
+    -webkit-backdrop-filter:blur(24px) saturate(135%);backdrop-filter:blur(24px) saturate(135%)}
+  .section-track{display:none}
+  .section-track-fill{display:block;width:100%;height:0;background:linear-gradient(180deg,var(--accent2),var(--accent));
+    box-shadow:0 0 8px var(--glow)}
+  .section-dot{position:relative;display:flex;align-items:center;min-width:44px;min-height:40px;
+    width:100%;padding:4px 10px;border-radius:14px;color:var(--muted);text-decoration:none;outline:none;cursor:pointer;
+    transition:background .18s,box-shadow .18s,transform .18s}
+  .section-dot-mark{display:none}
+  .section-dot-label{display:flex;gap:7px;align-items:baseline;width:100%;
+    color:var(--muted);font-size:12px;font-weight:500;white-space:nowrap;
+    opacity:.68;pointer-events:none;transition:.15s}
+  .section-dot-label > span:nth-child(2){flex:0 1 auto;min-width:0}
+  .section-number{color:var(--muted);font-size:9.5px;font-variant-numeric:tabular-nums}
+  .section-progress-value{color:var(--muted);font-size:10.5px;font-weight:500}
+  .section-dot:hover .section-dot-label,.section-dot:focus-visible .section-dot-label,.section-dot.active .section-dot-label{
+    opacity:1;color:var(--ink)}
+  .section-dot:hover,.section-dot:focus-visible{background:color-mix(in srgb,var(--card2) 24%,transparent)}
+  .section-dot:focus-visible{box-shadow:0 0 0 2px var(--accent)}
+  .section-dot.active{background:color-mix(in srgb,var(--card) 74%,transparent);
+    box-shadow:0 7px 18px var(--shadow),inset 0 1px 0 rgba(255,255,255,.16)}
+  .section-dot.active .section-dot-label{font-weight:650}
+  .mobile-section-nav{display:none;position:fixed;left:12px;bottom:12px;z-index:46;width:min(230px,calc(100vw - 78px))}
+  .mobile-section-button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:46px;
+    padding:8px 12px;border:1px solid var(--line);border-radius:23px;background:var(--counter-bg);color:var(--ink);
+    font:600 13px/1.2 inherit;cursor:pointer;box-shadow:0 6px 20px var(--shadow);backdrop-filter:blur(10px)}
+  .mobile-section-button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .mobile-section-meta{color:var(--muted);font-size:11px;font-weight:500}
+  .mobile-section-chevron{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;transition:.15s}
+  .mobile-section-button[aria-expanded="true"] .mobile-section-chevron{transform:rotate(180deg)}
+  .mobile-progress-track{position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--line);border-radius:3px;overflow:hidden}
+  .mobile-progress-fill{display:block;width:0;height:100%;background:var(--accent)}
+  .mobile-section-menu{position:absolute;left:0;bottom:54px;width:100%;padding:6px;border:1px solid var(--line);
+    border-radius:14px;background:var(--counter-bg);box-shadow:0 10px 30px var(--shadow);backdrop-filter:blur(12px)}
+  .mobile-section-menu[hidden]{display:none}
+  .mobile-section-menu a{display:block;min-height:44px;padding:11px 12px;border-radius:9px;color:var(--muted);
+    text-decoration:none;font-size:13px}
+  .mobile-section-menu a:hover,.mobile-section-menu a:focus-visible{background:var(--card2);color:var(--ink);outline:none}
+  .mobile-section-menu a.active{background:var(--accent);color:var(--accent-ink);font-weight:600}
+  /* practice counter chip */
+  #counter{position:fixed;left:18px;bottom:18px;z-index:45}
+  .cbadge{display:inline-block;background:var(--counter-bg);border:1px solid var(--line);
+    border-radius:20px;padding:7px 13px;font-size:12.5px;color:var(--muted);
+    box-shadow:0 6px 20px var(--shadow);backdrop-filter:blur(8px)}
+  .cbadge b{color:var(--good);font-size:14px}
+  @media(max-width:1240px){
+    .section-rail{display:none}
+    .mobile-section-nav{display:block}
+    #counter{display:none}
+  }
+  @media(prefers-reduced-transparency:reduce){
+    .section-rail,.mobile-section-button,.mobile-section-menu{background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  /* back to top */
+  #top{position:fixed;right:18px;bottom:18px;z-index:45;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+    font-size:18px;opacity:0;pointer-events:none;transition:.2s;box-shadow:0 6px 20px var(--shadow)}
+  #top.show{opacity:1;pointer-events:auto}
+  #top:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:600px){
+    header{padding:15px 10px 11px}
+    main{padding:14px 10px 32px}
+    section{padding:16px 13px;margin:12px 0;border-radius:14px;scroll-margin-top:104px}
+    h1{font-size:20px}
+    .headline{align-items:flex-start;flex-direction:row;gap:10px}
+    .headline h1{flex:1;min-width:0}
+    .theme-toggle{width:40px;height:40px}
+    h2{font-size:18px;flex-wrap:wrap}
+    details{padding:10px 12px}
+    .box{padding:13px 14px}
+    pre{max-width:100%;font-size:12.5px;padding:12px}
+    .formula{justify-content:flex-start;min-height:58px;padding:10px 12px}
+    .formula math{font-size:1.08rem}
+    .column-calc{padding:14px 18px}
+    #top{right:12px;bottom:12px;width:42px;height:42px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <div class="headline">
+      <h1>ЄВІ + ЄВВ 2026 — підготовчий матеріал</h1>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Увімкнути темну тему" title="Увімкнути темну тему">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>
+        </svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.5"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+        </svg>
+      </button>
+    </div>
+    <div class="sub">ТЗНК · Англійська мова · Методологія наукових досліджень</div>
+    <div class="exam-dates" aria-label="Дати вступних випробувань">
+      <span class="exam-date"><b>ЄВІ</b> 14 липня 2026 · 14:45</span>
+      <span class="exam-date"><b>ЄВВ</b> 27 липня 2026 · 10:00</span>
+    </div>
+  </div>
+</header>
+<nav class="section-rail" aria-label="Розділи підготовчого матеріалу">
+  <span class="section-track" aria-hidden="true"><span id="sectionTrackFill" class="section-track-fill"></span></span>
+  <a class="section-dot" href="#plan" aria-label="План"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">01</span><span>План</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#format" aria-label="Формат"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">02</span><span>Формат</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#verbal" aria-label="Вербальний блок"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">03</span><span>Вербальний</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#logic" aria-label="Логіка"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">04</span><span>Логіка</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#arithmetic" aria-label="Арифметика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">05</span><span>Арифметика</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#misc" aria-label="Інше"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">06</span><span>Інше</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#eng" aria-label="Англійська"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">07</span><span>Англійська</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#methodology" aria-label="Методологія"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">08</span><span>Методологія</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#drill" aria-label="Практика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">09</span><span>Практика</span><span class="section-progress-value"></span></span></a>
+</nav>
+<div class="mobile-section-nav">
+  <button id="mobileSectionButton" class="mobile-section-button" type="button" aria-expanded="false" aria-controls="mobileSectionMenu">
+    <span id="mobileSectionName">План</span>
+    <span class="mobile-section-meta"><span id="mobileSectionPercent">0%</span></span>
+    <svg class="mobile-section-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+    <span class="mobile-progress-track" aria-hidden="true"><span id="mobileProgressFill" class="mobile-progress-fill"></span></span>
+  </button>
+  <div id="mobileSectionMenu" class="mobile-section-menu" hidden>
+    <a href="#plan">01 · План</a><a href="#format">02 · Формат</a><a href="#verbal">03 · Вербальний</a><a href="#logic">04 · Логіка</a>
+    <a href="#arithmetic">05 · Арифметика</a><a href="#misc">06 · Інше</a><a href="#eng">07 · Англійська</a><a href="#methodology">08 · Методологія</a><a href="#drill">09 · Практика</a>
+  </div>
+</div>
+<div id="counter"><span class="cbadge">Опрацьовано задач: <b id="cnum">0</b> / <span id="ctot">0</span></span></div>
+
+<main>
+
+<section id="plan">
+  <h2>⏱️ Експрес-повторення ЄВІ за 1–2 години</h2>
+  <p class="big">Не намагайся вивчити все. Мета — <b>розігріти мозок і зняти паніку</b> перед знайомими типами задач.</p>
+  <table>
+    <tr><th>Час</th><th>Що робиш</th></tr>
+    <tr><td>0–10 хв</td><td>Формат + стратегія часу (нижче). Прочитай і закрий питання «а що там взагалі буде».</td></tr>
+    <tr><td>10–35 хв</td><td>Арифметика: ділення в стовпчик, %, дроби, прикидка. Прорешай приклади рукою.</td></tr>
+    <tr><td>35–60 хв</td><td>Логіка: кола Ейлера, Діріхле, комбінаторика, таблиці/графіки, аналогії.</td></tr>
+    <tr><td>60–80 хв</td><td>Вербальний блок + англійська (техніка читання під тиском часу).</td></tr>
+    <tr><td>80–90 хв</td><td>Практичний блок унизу. Вода, туалет, глибокий вдих. Не зубри нове за 10 хв до старту.</td></tr>
+  </table>
+  <div class="box warn"><b>Головне правило на іспиті:</b> не залипай. Задача не йде за ~60 сек → познач, іди далі, повернись у кінці. Неправильна відповідь коштує стільки ж, скільки пропущена — тому <b>ніколи не лишай порожніх</b>, у кінці вгадуй.</div>
+  <div class="box"><b>Структура посібника:</b> розділи 01–07 охоплюють ЄВІ, розділ 08 — повний курс методології для ЄВВ, розділ 09 — спільна практика з поясненими відповідями.</div>
+</section>
+
+<section id="format">
+  <h2>📋 Формат <span class="tag">знай точно</span></h2>
+  <h3>ЄВІ = ТЗНК + Англійська, разом орієнтовно 120 хв</h3>
+  <p>Для кожного тесту визначено окремий орієнтовний час: <b>75 хв на ТЗНК</b> і <b>45 хв на англійську</b>.</p>
+
+  <h3>ТЗНК — 2 компоненти</h3>
+  <ul>
+    <li><b>Вербально-комунікативний:</b> завдання 1–4 — заповнення пропусків у мікротекстах (10 підпунктів, до 10 балів).</li>
+    <li><b>Логіко-аналітичний + вербальний:</b> завдання 5–27 — вибір однієї правильної відповіді (23 бали). Тут діаграми, таблиці, графіки, кола Ейлера, комбінаторика, аналогії, числові задачі.</li>
+  </ul>
+  <p class="kv">Кожне правильне = 1 бал (у мікротекстах — по 1 за підпункт). Штрафу за помилку немає.</p>
+
+  <h3>Англійська — 30 завдань, 45 хв</h3>
+  <ul>
+    <li><b>Reading (Читання):</b> 6 завдань на встановлення відповідності та 5 — з вибором однієї відповіді.</li>
+    <li><b>Use of English:</b> 19 завдань на заповнення пропусків у тексті (граматика/лексика).</li>
+    <li>Максимум 30 балів, кожне = 1 бал.</li>
+  </ul>
+  <p class="kv"><b>Офіційне джерело:</b> <a href="https://testportal.gov.ua/yedynyj-vstupnyj-ispyt-2026/">характеристика ЄВІ-2026 УЦОЯО</a> (кількість завдань, форми, час і схема нарахування балів).</p>
+
+  <h3>ЄВВ з методології наукових досліджень</h3>
+  <p><b>100 завдань · 150 хв · максимум 100 тестових балів.</b> У кожному завданні одна правильна відповідь із чотирьох; помилка або пропуск = 0, штрафу немає.</p>
+  <p class="kv"><b>Офіційні джерела:</b> <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">характеристика ЄВВ-2026 УЦОЯО</a> та <a href="https://testportal.gov.ua/wp-content/uploads/2025/05/Programa-yedynogo-vstupnogo-vyprobuvannya-z-metodologiyi-naukovyh-doslidzhen.pdf">програма МОН</a>.</p>
+</section>
+
+<section id="verbal">
+  <h2>🗣️ Вербально-комунікативний блок</h2>
+  <p>Тексти + пропуски. Перевіряють, чи розумієш <b>логіку зв'язків</b> між реченнями, а не ерудицію.</p>
+  <h3>Тактика заповнення пропусків</h3>
+  <ol>
+    <li>Прочитай <b>усе речення до кінця</b>, а не лише до пропуску. Часто підказка стоїть після.</li>
+    <li>Лови <b>сигнальні слова</b>: <span class="pill">проте / однак</span> = протиставлення, <span class="pill">тому / отже</span> = наслідок, <span class="pill">адже / оскільки</span> = причина, <span class="pill">крім того</span> = додавання.</li>
+    <li>Підстав кожен варіант і читай уголос подумки — граматично й за змістом має «клацнути».</li>
+    <li>Метод виключення: прибирай явно недоречні, обирай з 2 найкращих.</li>
+  </ol>
+  <div class="box"><b>Читання на головну думку:</b> головна думка ≠ перше речення. Часто вона в останньому абзаці або у фразі після «отже/таким чином». Деталь у тексті ≠ головна ідея — це пастка у варіантах.</div>
+  <h3>Типові пастки у варіантах відповідей</h3>
+  <ul>
+    <li><b>Занадто категорично</b> (усі, ніколи, завжди, лише) — часто неправильні.</li>
+    <li><b>Правда, але не про те</b> — факт із тексту, але не відповідь на питання.</li>
+    <li><b>Підміна понять</b> — схоже формулювання, але змінене одне слово.</li>
+  </ul>
+  <h3>Лексика, пунктуація й позиція автора <span class="tag">високий пріоритет</span></h3>
+  <ul>
+    <li><b>Контекстна лексика:</b> спочатку сформулюй сенс пропуску своїм словом, потім звір варіанти. Перевір пароніми й сполучуваність: <i>ефективний метод</i>, але <i>ефектний виступ</i>.</li>
+    <li><b>Пунктуація:</b> визнач відношення між частинами. Пояснення після узагальнення → двокрапка; різкий наслідок/протиставлення → тире; вставне слово → коми.</li>
+    <li><b>Позиція автора:</b> відділяй факт від оцінки. Іронію часто видає навмисна невідповідність буквальної похвали й негативної ситуації.</li>
+  </ul>
+</section>
+
+<section id="logic">
+  <h2>🧠 Логіко-аналітичний блок</h2>
+
+  <h3>1. Кола Ейлера (множини)</h3>
+  <p>Малюй завжди. Формула для двох множин:</p>
+  <div class="formula"><math display="block" aria-label="Потужність об’єднання A і B дорівнює потужності A плюс потужність B мінус потужність їх перетину"><mrow><mo>|</mo><mi>A</mi><mo>∪</mo><mi>B</mi><mo>|</mo><mo>=</mo><mo>|</mo><mi>A</mi><mo>|</mo><mo>+</mo><mo>|</mo><mi>B</mi><mo>|</mo><mo>−</mo><mo>|</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>|</mo></mrow></math></div>
+  <p class="kv">Усього в об’єднанні = в A + в B − у обох.</p>
+  <div class="box good"><b>Приклад:</b> 30 студентів. Англійську знають 18, німецьку 12, обидві — 5. Скільки не знають жодної?
+  <div class="ans">Знають хоча б одну = 18+12−5 = 25. Не знають = 30−25 = <b>5</b>.</div></div>
+  <p class="kv">Порада: заповнюй перетин (центр) першим, потім «тільки A» = A − перетин, «тільки B» = B − перетин.</p>
+
+  <h3>2. Принцип Діріхле («голубник»)</h3>
+  <p>Якщо <b>n предметів</b> розкласти в <b>k коробок</b> і n &gt; k, то хоча б в одній коробці ≥ 2 предмети.</p>
+  <p>Загальна форма: хоча б в одній коробці буде <span class="math-inline"><math aria-label="стеля від n поділеного на k"><mrow><mo>⌈</mo><mfrac><mi>n</mi><mi>k</mi></mfrac><mo>⌉</mo></mrow></math></span> (округлення вгору).</p>
+  <div class="box good"><b>Приклад:</b> у групі 13 людей — доведи, що двоє народилися в один місяць. 13 людей, 12 місяців → 13&gt;12 → мінімум двоє в одному місяці.</div>
+  <div class="box good"><b>Приклад:</b> скільки шкарпеток витягти навмання з ящика (кольори: чорні + білі), щоб гарантовано мати пару? Кольорів 2 → бери 3, і мінімум 2 однакові.</div>
+
+  <h3>3. Комбінаторика</h3>
+  <table>
+    <tr><th>Тип</th><th>Коли</th><th>Формула</th></tr>
+    <tr><td>Правило множення</td><td>послідовні незалежні вибори</td><td><math><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>·</mo><msub><mi>n</mi><mn>2</mn></msub><mo>·</mo><mo>…</mo></mrow></math></td></tr>
+    <tr><td>Перестановки</td><td>розставити всі n по порядку</td><td><math><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>n</mi><mo>·</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>·</mo><mo>…</mo><mo>·</mo><mn>1</mn></mrow></math></td></tr>
+    <tr><td>Розміщення (порядок важливий)</td><td>обрати k з n, порядок має значення</td><td><math><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo>)</mo><mo>!</mo></mrow></mfrac></math></td></tr>
+    <tr><td>Сполучення (порядок неважливий)</td><td>обрати k з n, порядок не важливий</td><td><math><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>k</mi><mo>!</mo><mo>·</mo><mo>(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo>)</mo><mo>!</mo></mrow></mfrac></math></td></tr>
+  </table>
+  <div class="box good"><b>Приклад (множення):</b> 3 футболки × 2 штани × 4 пари взуття = <b>24</b> образи.</div>
+  <div class="box good"><b>Приклад (сполучення):</b> скільки способів обрати 2 чергових з 5 людей? C(5,2) = 5!/(2!·3!) = 10.</div>
+  <p class="kv">Швидко: 3!=6, 4!=24, 5!=120, 6!=720. C(n,2) = n·(n−1)/2.</p>
+
+  <h3>4. Ймовірність</h3>
+  <div class="formula"><math display="block" aria-label="Ймовірність дорівнює кількості сприятливих результатів, поділеній на кількість усіх рівноймовірних результатів"><mrow><mi>P</mi><mo>=</mo><mfrac><mtext>сприятливі результати</mtext><mtext>усі рівноймовірні результати</mtext></mfrac></mrow></math></div>
+  <div class="box good"><b>Приклад:</b> у мішку 3 червоні і 7 синіх кульок. P(червона) = 3/10 = 0,3 = 30%.</div>
+
+  <h3>5. Таблиці, графіки, діаграми</h3>
+  <ul>
+    <li>Спершу читай <b>підписи осей і одиниці</b> (тис.? %? грн?). Тут ховають пастки.</li>
+    <li>«На скільки більше» = різниця (відняти). «У скільки разів» = поділити.</li>
+    <li>Ріст із 40 до 50 = <b>+25%</b> (не +10%!). Формула: <span class="math-inline"><math aria-label="нове мінус старе, поділене на старе, помножити на сто відсотків"><mrow><mfrac><mrow><mtext>нове</mtext><mo>−</mo><mtext>старе</mtext></mrow><mtext>старе</mtext></mfrac><mo>×</mo><mn>100</mn><mo>%</mo></mrow></math></span>.</li>
+  </ul>
+
+  <h3>6. Аналогії та послідовності</h3>
+  <p>Аналогія: «A відноситься до B, як C до ?». Знайди <b>тип зв'язку</b> у першій парі (частина–ціле, причина–наслідок, синонім, антонім, функція) і застосуй до другої.</p>
+  <div class="box good"><b>Приклад:</b> Птах → крило, як риба → ? Відповідь: <b>плавець</b> (орган руху). </div>
+  <p>Числові ряди: перевір різницю сусідніх (арифм.), відношення (геом.), чергування двох правил.</p>
+  <div class="box good"><b>Приклад:</b> 2, 6, 18, 54, ? → кожне ×3 → <b>162</b>. &nbsp; 1, 4, 9, 16, ? → квадрати → <b>25</b>.</div>
+
+  <h3>7. Логічні судження (силогізми)</h3>
+  <ul>
+    <li>«Усі A є B» + «C є A» → «C є B». Малюй кола Ейлера, якщо плутаєшся.</li>
+    <li>Обережно зі зворотом: «Усі A є B» <b>НЕ</b> означає «усі B є A».</li>
+    <li>Заперечення «усі» = «хоча б один ні». Заперечення «існує» = «жоден».</li>
+  </ul>
+
+  <h3>8. Необхідні та достатні умови <span class="tag">часта пастка</span></h3>
+  <p>Умова «Якщо A, то B» (A ⟹ B):</p>
+  <ul>
+    <li><b>A — достатня</b> для B (A вистачає, щоб настало B).</li>
+    <li><b>B — необхідна</b> для A (без B не буде A).</li>
+  </ul>
+  <table>
+    <tr><th>Дозволено</th><th>ХИБНО (пастка)</th></tr>
+    <tr><td><b>Контрапозиція:</b> «Якщо A, то B» = «Якщо не B, то не A» ✓</td><td><b>Обернення:</b> «Якщо A, то B» ⇒ «Якщо B, то A» ✗</td></tr>
+    <tr><td>Дощ ⟹ асфальт мокрий. Асфальт сухий ⟹ дощу не було ✓</td><td>Асфальт мокрий ⟹ був дощ ✗ (могли полити)</td></tr>
+  </table>
+  <div class="box warn"><b>Дві класичні помилки:</b> заперечення передумови («не A, отже не B») і ствердження наслідку («B, отже A») — обидві <b>невалідні</b>. Валідні лише: A→B, тому B (модус поненс) і не-B, тому не-A (модус толленс).</div>
+
+  <h3>9. Форми аргументації</h3>
+  <table>
+    <tr><th>Форма</th><th>Рух думки</th><th>Приклад</th></tr>
+    <tr><td><b>Дедукція</b></td><td>від загального до окремого (висновок надійний, якщо посилки істинні)</td><td>Усі люди смертні → Сократ смертний</td></tr>
+    <tr><td><b>Індукція</b></td><td>від окремих випадків до загального (ймовірнісний висновок)</td><td>Усі бачені лебеді білі → усі лебеді білі (може бути хибно)</td></tr>
+    <tr><td><b>Аналогія</b></td><td>перенос ознаки за схожістю об'єктів</td><td>Земля має воду й життя → схожа планета теж може</td></tr>
+  </table>
+  <p class="kv">У завданнях типу «яке судження підтверджує / спростовує гіпотезу» — шукай факт, що <b>прямо посилює або руйнує</b> причинний зв'язок, а не просто дотичний.</p>
+
+  <h3>10. Логічні помилки (треба впізнати)</h3>
+  <ul>
+    <li><b>Хибна причина</b> (після цього ≠ через це): півень заспівав → зійшло сонце.</li>
+    <li><b>До людини</b> (ad hominem): критикують особу, а не аргумент.</li>
+    <li><b>Підміна тези:</b> відповідають не на те, що стверджувалось.</li>
+    <li><b>Хибна дилема:</b> «або так, або так» — коли є й інші варіанти.</li>
+    <li><b>Поспішне узагальнення:</b> висновок про всіх на основі 1–2 випадків.</li>
+    <li><b>Коло в доведенні:</b> теза доводиться сама собою.</li>
+  </ul>
+
+  <h3>11. Алгоритм для таблиць і графіків</h3>
+  <p><b>Таблиця → Тренд → Гіпотеза.</b> 1) Прочитай осі й одиниці. 2) Побач напрям (росте/падає/пік). 3) Спитай «що це означає?» — саме на це часто питання. Не рахуй зайвого: спершу глянь, які варіанти пропонують.</p>
+
+  <h3>12. Розміщення з обмеженнями</h3>
+  <p><b>Метод:</b> випиши об'єкти й умови («А раніше за Б», «В не поруч із Г»), постав найжорсткішу умову першою, а потім перевір варіанти методом виключення. Не перебирай усі порядки, якщо достатньо знайти один допустимий.</p>
+</section>
+
+<section id="arithmetic">
+  <h2>🔢 Арифметика без калькулятора</h2>
+
+  <h3>Ділення в стовпчик — покроково</h3>
+  <p>Приклад: <b>4728 ÷ 6</b></p>
+  <div class="column-calc" role="img" aria-label="Ділення 4728 на 6 у стовпчик, результат 788">
+    <div class="division-layout" aria-hidden="true">
+      <div class="division-left">4728</div>
+      <div class="division-right"><div class="division-divisor">6</div><div class="division-quotient">788</div></div>
+      <div class="division-steps">
+        <div class="division-step subtract" style="--shift:0ch;--span:2ch">42</div>
+        <div class="division-step rule" style="--shift:0ch;--span:2ch"></div>
+        <div class="division-step" style="--shift:1ch;--span:2ch">52</div>
+        <div class="division-step subtract" style="--shift:1ch;--span:2ch">48</div>
+        <div class="division-step rule" style="--shift:1ch;--span:2ch"></div>
+        <div class="division-step" style="--shift:2ch;--span:2ch">48</div>
+        <div class="division-step subtract" style="--shift:2ch;--span:2ch">48</div>
+        <div class="division-step rule" style="--shift:2ch;--span:2ch"></div>
+        <div class="division-step" style="--shift:3ch;--span:1ch">0</div>
+      </div>
+    </div>
+  </div>
+  <ol>
+    <li>4 на 6 не ділиться → беремо 47.</li>
+    <li>47 ÷ 6 = 7, бо 7·6 = 42. Залишок: 47−42 = 5.</li>
+    <li>Зносимо 2 → 52. 52 ÷ 6 = 8, бо 8·6 = 48. Залишок 4.</li>
+    <li>Зносимо 8 → 48. 48 ÷ 6 = 8 рівно. Залишок 0.</li>
+  </ol>
+  <p><b>Відповідь: 788.</b></p>
+
+  <div class="box"><b>З остачею:</b> 4730 ÷ 6 = 788, остача 2 (бо 788·6=4728, лишається 2). Перевірка: дільник·частка + остача = ділене.</div>
+
+  <details>
+    <summary>Спробуй сам: 9375 ÷ 5 = ?</summary>
+    <div class="ans">
+      <div class="column-calc" role="img" aria-label="Ділення 9375 на 5 у стовпчик, результат 1875">
+        <div class="division-layout" aria-hidden="true">
+          <div class="division-left">9375</div>
+          <div class="division-right"><div class="division-divisor">5</div><div class="division-quotient">1875</div></div>
+          <div class="division-steps">
+            <div class="division-step subtract" style="--shift:0ch;--span:1ch">5</div>
+            <div class="division-step rule" style="--shift:0ch;--span:1ch"></div>
+            <div class="division-step" style="--shift:0ch;--span:2ch">43</div>
+            <div class="division-step subtract" style="--shift:0ch;--span:2ch">40</div>
+            <div class="division-step rule" style="--shift:0ch;--span:2ch"></div>
+            <div class="division-step" style="--shift:1ch;--span:2ch">37</div>
+            <div class="division-step subtract" style="--shift:1ch;--span:2ch">35</div>
+            <div class="division-step rule" style="--shift:1ch;--span:2ch"></div>
+            <div class="division-step" style="--shift:2ch;--span:2ch">25</div>
+            <div class="division-step subtract" style="--shift:2ch;--span:2ch">25</div>
+            <div class="division-step rule" style="--shift:2ch;--span:2ch"></div>
+            <div class="division-step" style="--shift:3ch;--span:1ch">0</div>
+          </div>
+        </div>
+      </div>
+      9:5=1 (ост.4) → 43:5=8 (ост.3) → 37:5=7 (ост.2) → 25:5=5. <b>= 1875</b>
+    </div>
+  </details>
+
+  <h3>Множення в стовпчик — швидка перевірка</h3>
+  <div class="column-calc" role="img" aria-label="Множення 34 на 27 у стовпчик, результат 918">
+    <div class="multiplication-layout" aria-hidden="true">
+      <div>34</div><div>× 27</div><div class="calc-rule"></div>
+      <div>238</div><div>680</div><div class="calc-rule"></div><div>918</div>
+    </div>
+    <div class="calc-note">238 = 34 × 7 · 680 = 34 × 20</div>
+  </div>
+
+  <h3>Дроби</h3>
+  <table>
+    <tr><th>Дія</th><th>Правило</th><th>Приклад</th></tr>
+    <tr><td>+ / −</td><td>спільний знаменник</td><td><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>6</mn></mfrac><mo>+</mo><mfrac><mn>2</mn><mn>6</mn></mfrac><mo>=</mo><mfrac><mn>5</mn><mn>6</mn></mfrac></mrow></math></td></tr>
+    <tr><td>×</td><td>чисельник·чисельник / знам.·знам.</td><td><math><mrow><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>×</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>=</mo><mfrac><mn>6</mn><mn>12</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></td></tr>
+    <tr><td>÷</td><td>множ. на обернений</td><td><math><mrow><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>÷</mo><mfrac><mn>4</mn><mn>5</mn></mfrac><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>×</mo><mfrac><mn>5</mn><mn>4</mn></mfrac><mo>=</mo><mfrac><mn>5</mn><mn>6</mn></mfrac></mrow></math></td></tr>
+  </table>
+
+  <h3>Відсотки — три ключові дії</h3>
+  <ul>
+    <li><b>X% від N:</b> <span class="math-inline"><math><mrow><mi>N</mi><mo>·</mo><mfrac><mi>X</mi><mn>100</mn></mfrac></mrow></math></span>. Наприклад, 20% від 350 = 350·0,2 = 70.</li>
+    <li><b>Яка частка у %:</b> <span class="math-inline"><math><mrow><mfrac><mtext>частина</mtext><mtext>ціле</mtext></mfrac><mo>·</mo><mn>100</mn><mo>%</mo></mrow></math></span>. Наприклад, 45 із 180 = 25%.</li>
+    <li><b>Зміна у %:</b> <span class="math-inline"><math><mrow><mfrac><mrow><mtext>нове</mtext><mo>−</mo><mtext>старе</mtext></mrow><mtext>старе</mtext></mfrac><mo>·</mo><mn>100</mn><mo>%</mo></mrow></math></span>. З 80 до 100: +25%.</li>
+  </ul>
+  <div class="box warn"><b>Пастка на знижку+націнку:</b> −20%, потім +20% ≠ початок. 100 → 80 → 96. Втратив 4%. Відсотки не додаються лінійно.</div>
+  <p class="kv">Корисні дроби ↔ %: 1/2=50%, 1/3≈33%, 1/4=25%, 1/5=20%, 1/8=12,5%, 3/4=75%.</p>
+
+  <h3>Прикидка (economy of effort)</h3>
+  <p>Часто варіанти далеко один від одного — точний рахунок не потрібен. Округли: 198·49 ≈ 200·50 = 10000. Обери найближчий варіант.</p>
+
+  <h3>Пропорції / швидкість / робота</h3>
+  <ul>
+    <li><b>Швидкість:</b> шлях = швидкість · час. → 60 км/год · 2,5 год = 150 км.</li>
+    <li><b>Пропорція «навхрест»:</b> <span class="math-inline"><math><mrow><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mfrac><mi>c</mi><mi>x</mi></mfrac><mo>⇒</mo><mi>x</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mo>·</mo><mi>c</mi></mrow><mi>a</mi></mfrac></mrow></math></span>.</li>
+    <li><b>Спільна робота:</b> якщо один за 4 год, інший за 6 год, разом за годину роблять <span class="math-inline"><math><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>6</mn></mfrac><mo>=</mo><mfrac><mn>5</mn><mn>12</mn></mfrac></mrow></math></span>, отже все за 12/5 = 2,4 год.</li>
+  </ul>
+</section>
+
+<section id="misc">
+  <h2>🎲 Інше, що може попастись</h2>
+
+  <h3>Середні, частки, відношення</h3>
+  <ul>
+    <li><b>Середнє арифметичне</b> = сума / кількість. Якщо середнє 5 чисел = 8, їх сума = 40.</li>
+    <li><b>Медіана</b> — середнє за позицією після сортування (для 5 чисел — 3-тє).</li>
+    <li><b>Відношення (пропорція):</b> поділили 60 у відношенні 2:3 → частин 5, одна частина 12 → 24 і 36.</li>
+    <li><b>«Скільки разів»</b> = ділення; <b>«на скільки»</b> = віднімання. Не плутай.</li>
+  </ul>
+
+  <h3>Зважене середнє</h3>
+  <p><b>Метод:</b> коли групи мають різну чисельність, множ кожне середнє на кількість елементів, складай суми й діли на загальну кількість. Просте середнє двох середніх працює лише для однакових за розміром груп.</p>
+  <div class="formula"><math display="block" aria-label="Зважене середнє дорівнює сумі добутків значень на їх ваги, поділеній на суму ваг"><mrow><mover><mi>x</mi><mo>¯</mo></mover><mo>=</mo><mfrac><mrow><msub><mi>w</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub></mrow><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub></mrow></mfrac></mrow></math></div>
+
+  <h3>Час, дати, календар</h3>
+  <ul>
+    <li>Днів тижня 7: через 100 днів від понеділка → 100 mod 7 = 2 → середа.</li>
+    <li>Переведення: 1 год = 60 хв, 2,5 год = 150 хв. Швидкість × час = шлях.</li>
+    <li>Різниця дат — рахуй по цілих проміжках, стеж за включенням меж («з 3 по 7» = 5 днів).</li>
+  </ul>
+
+  <h3>Кодування та шифри (буква↔число)</h3>
+  <p>Часто A=1, B=2 … або зсув на N. Знайди правило на одному прикладі й перевір на другому. Дивись на <b>різницю позицій</b> букв.</p>
+  <div class="box good"><b>Приклад:</b> якщо CAT → DBU, то правило «+1 буква». Тоді DOG → <b>EPH</b>.</div>
+
+  <h3>Родинні звʼязки та напрямки</h3>
+  <ul>
+    <li>Малюй схему сім'ї стрілками, не тримай у голові: «син брата матері» = двоюрідний.</li>
+    <li>Напрямки: повернувся ліворуч двічі = розворот на 180°. Малюй компас.</li>
+  </ul>
+
+  <h3>Просторові / фігурні ряди</h3>
+  <ul>
+    <li>«Яка фігура наступна» — шукай, що <b>обертається, додається, зникає</b> крок за кроком.</li>
+    <li>«Зайве» (odd one out) — знайди ознаку, спільну для всіх, крім одного.</li>
+    <li>Розгортки/складання куба — уявляй, які грані стають сусідніми.</li>
+  </ul>
+
+  <h3>Достатність даних</h3>
+  <p>Іноді питання: «чи вистачає інформації для висновку?». Перевір, чи <b>однозначно</b> визначається відповідь. Якщо є ≥2 варіанти — даних не досить.</p>
+
+  <div class="box warn"><b>Загальний принцип для всього «інше»:</b> знайди правило на видимій частині → перевір його на другій → застосуй. Не вгадуй з першого прикладу.</div>
+</section>
+
+<section id="eng">
+  <h2>🇬🇧 Англійська — тактика на 45 хв</h2>
+
+  <h3>Розподіл часу</h3>
+  <ul>
+    <li>Reading — ~20 хв, Use of English — ~20 хв, ~5 хв перевірка/перенос.</li>
+    <li>Спершу зроби те, що дається легше — набирай певні бали.</li>
+  </ul>
+
+  <h3>Reading (читання)</h3>
+  <ol>
+    <li>Прочитай <b>питання перш ніж текст</b> — знатимеш, що шукати.</li>
+    <li>На відповідність (matching заголовків/абзаців): шукай <b>головну ідею абзацу</b>, не окреме слово.</li>
+    <li>Стережись <b>синонімів</b>: у тексті «cheap», у відповіді «inexpensive». Правильний варіант зазвичай перефразовує, а не копіює слова.</li>
+    <li>Відповідь завжди <b>у тексті</b> — не додумуй із власного досвіду.</li>
+  </ol>
+
+  <h3>Use of English (пропуски)</h3>
+  <p>Дивись, <b>яка частина мови</b> потрібна в пропуску, і на слова довкола:</p>
+  <table>
+    <tr><th>Сигнал</th><th>Що ставити</th></tr>
+    <tr><td>a lot <u>of</u>, interested <u>in</u>, depend <u>on</u></td><td>сталі прийменники — вивчи типові</td></tr>
+    <tr><td>since / for / already / yet</td><td>Present Perfect (have + V3)</td></tr>
+    <tr><td>yesterday / ago / last</td><td>Past Simple</td></tr>
+    <tr><td>if + Present, … will</td><td>1st Conditional</td></tr>
+    <tr><td>the + прикметник найвищого ступеня</td><td>the biggest, the most important</td></tr>
+    <tr><td>артикль перед голосною</td><td>an (an hour — за звуком!)</td></tr>
+  </table>
+  <div class="box"><b>Word formation:</b> якщо треба слово від кореня — визнач частину мови за реченням: перед іменником → прикметник (-ful, -ive, -ous), дія → дієслово, «not» → префікс (un-, in-, dis-).</div>
+
+  <h3>Часи — коротка карта</h3>
+  <table>
+    <tr><th>Час</th><th>Маркери</th><th>Форма</th></tr>
+    <tr><td>Present Simple</td><td>always, usually, every day</td><td>V / V-s</td></tr>
+    <tr><td>Present Continuous</td><td>now, at the moment, look!</td><td>am/is/are + V-ing</td></tr>
+    <tr><td>Present Perfect</td><td>just, already, yet, ever, since, for</td><td>have/has + V3</td></tr>
+    <tr><td>Past Simple</td><td>yesterday, ago, in 2010, last</td><td>V2 / V-ed</td></tr>
+    <tr><td>Past Continuous</td><td>while, at 5 pm yesterday</td><td>was/were + V-ing</td></tr>
+    <tr><td>Past Perfect</td><td>before, after, by the time (раніше за інше минуле)</td><td>had + V3</td></tr>
+    <tr><td>Future</td><td>tomorrow, next, in 2030</td><td>will + V / be going to</td></tr>
+  </table>
+
+  <h3>Умовні речення (Conditionals)</h3>
+  <table>
+    <tr><th>Тип</th><th>Структура</th><th>Приклад</th></tr>
+    <tr><td>0 (факт)</td><td>If + Present, Present</td><td>If you heat ice, it melts.</td></tr>
+    <tr><td>1 (реальне майб.)</td><td>If + Present, will + V</td><td>If it rains, I will stay.</td></tr>
+    <tr><td>2 (нереальне тепер)</td><td>If + Past, would + V</td><td>If I had time, I would help.</td></tr>
+    <tr><td>3 (нереальне минуле)</td><td>If + Past Perfect, would have + V3</td><td>If I had known, I would have come.</td></tr>
+  </table>
+
+  <h3>Пасивний стан</h3>
+  <p><span class="mono">be + V3</span>. The book <b>was written</b> in 1990. The house <b>is being built</b>. Дію робить не підмет, а над ним її виконують.</p>
+
+  <h3>Артиклі — швидко</h3>
+  <ul>
+    <li><b>a/an</b> — щось уперше / один із багатьох (a dog). <b>an</b> перед голосним <u>звуком</u>: an apple, an hour, a university (звук «ю»).</li>
+    <li><b>the</b> — конкретне / уже згадане / унікальне (the sun, the best, the USA).</li>
+    <li><b>без артикля</b> — множина/незлічуване в загальному сенсі (I like music), імена, більшість країн, мов.</li>
+  </ul>
+
+  <h3>Прийменники — сталі сполучення (часто в пропусках)</h3>
+  <div>
+    <span class="pill">depend <b>on</b></span><span class="pill">interested <b>in</b></span>
+    <span class="pill">good <b>at</b></span><span class="pill">afraid <b>of</b></span>
+    <span class="pill">married <b>to</b></span><span class="pill">arrive <b>at/in</b></span>
+    <span class="pill">listen <b>to</b></span><span class="pill">wait <b>for</b></span>
+    <span class="pill">responsible <b>for</b></span><span class="pill">famous <b>for</b></span>
+    <span class="pill">belong <b>to</b></span><span class="pill">succeed <b>in</b></span>
+    <span class="pill">agree <b>with</b> sb / <b>on</b> sth</span><span class="pill">look <b>forward to</b></span>
+  </div>
+  <p class="kv">Час/місце: <b>at</b> — точка (at 5, at home); <b>in</b> — всередині/місяці/роки (in May, in a car); <b>on</b> — поверхня/дні (on Monday, on the table).</p>
+
+  <h3>Фразові дієслова (часто зустрічаються)</h3>
+  <div>
+    <span class="pill">give up = кинути</span><span class="pill">look for = шукати</span>
+    <span class="pill">look after = доглядати</span><span class="pill">put off = відкласти</span>
+    <span class="pill">take off = злітати/знімати</span><span class="pill">turn down = відхилити</span>
+    <span class="pill">carry out = виконувати</span><span class="pill">find out = дізнатися</span>
+    <span class="pill">get on with = ладнати</span><span class="pill">run out of = закінчитися</span>
+    <span class="pill">bring up = виховувати</span><span class="pill">deal with = справлятися</span>
+  </div>
+
+  <h3>Словотвір (word formation) — приклади</h3>
+  <table>
+    <tr><th>Корінь</th><th>Іменник</th><th>Прикметник</th><th>Прислівник</th></tr>
+    <tr><td>care</td><td>care</td><td>careful / careless</td><td>carefully</td></tr>
+    <tr><td>success</td><td>success</td><td>successful</td><td>successfully</td></tr>
+    <tr><td>decide</td><td>decision</td><td>decisive</td><td>decisively</td></tr>
+    <tr><td>differ</td><td>difference</td><td>different</td><td>differently</td></tr>
+  </table>
+  <p class="kv">Заперечні префікси: <b>un-</b> (unhappy), <b>in-/im-/il-/ir-</b> (impossible, illegal, irregular), <b>dis-</b> (disagree), <b>mis-</b> (misunderstand).</p>
+
+  <h3>Часті помилки / «фальшиві друзі»</h3>
+  <ul>
+    <li><b>much/many</b>, <b>fewer/less</b> (fewer books, less water).</li>
+    <li><b>make</b> a decision/mistake vs <b>do</b> homework/business.</li>
+    <li><b>say</b> sth vs <b>tell</b> sb; <b>advice</b> (незлічуване, без -s).</li>
+    <li>Хибні друзі: <i>actually</i>=насправді, <i>sympathetic</i>=співчутливий, <i>magazine</i>=журнал, <i>fabric</i>=тканина, <i>accurate</i>=точний.</li>
+    <li>3-тя особа Present Simple: he/she/it + <b>-s</b>. У reported speech після дієслова повідомлення в минулому часи зазвичай зсуваються назад: <i>“I will come,” she said</i> → <i>She said she would come</i>.</li>
+  </ul>
+
+  <h3>Reading matching — алгоритм</h3>
+  <ol>
+    <li>Читай <b>заголовки/твердження</b> спершу, підкреслюй ключове.</li>
+    <li>Скануй абзац на <b>перефразування</b> ключа (синонім, не те саме слово).</li>
+    <li>Признач найочевидніші пари → лишиться менше варіантів для складних.</li>
+    <li>Один зайвий варіант — норма. Не підганяй його силоміць.</li>
+  </ol>
+
+  <h3>Оголошення ↔ потреби</h3>
+  <p><b>Метод:</b> у кожній потребі познач 2–3 обмеження (час, місце, ціна, мета), а в оголошенні шукай їх перефразування. Збіг одного яскравого слова ще не робить пару правильною.</p>
+
+  <h3>Лексика в контексті</h3>
+  <p><b>Метод:</b> спочатку визнач значення всього речення, потім перевір сталу сполучуваність слова з сусідами. Наприклад, англійською кажуть <span class="mono">make progress</span>, але <span class="mono">do homework</span>.</p>
+</section>
+
+<section id="methodology">
+  <h2>🔬 Методологія наукових досліджень <span class="tag">повний курс ЄВВ</span></h2>
+  <div class="box good"><b>Формат ЄВВ-2026:</b> 100 тестових завдань за 150 хвилин. Одна правильна відповідь із чотирьох, 1 бал за правильну, штрафу за помилку немає. Орієнтир — <b>90 секунд на завдання</b>.</div>
+
+  <h3>Що вчити за офіційною вагою програми</h3>
+  <table>
+    <tr><th>Розділ програми</th><th>Питома вага</th><th>Що знати</th></tr>
+    <tr><td><b>1. Наука й дослідження</b></td><td>20–30%</td><td>ознаки та функції науки, наука/псевдонаука, структурні елементи, типи досліджень, відкрита наука</td></tr>
+    <tr><td><b>2. Методологія дослідження</b></td><td>40–50%</td><td>методологія, метод і методика, принципи та підходи, емпіричне/теоретичне пізнання, методи</td></tr>
+    <tr><td><b>3. Організація науки</b></td><td>19–29%</td><td>мета, завдання, об’єкт, предмет, новизна; джерела й пошук; ШІ; етика й доброчесність</td></tr>
+    <tr><td><b>4. Представлення досліджень</b></td><td>5–7%</td><td>наукова публікація та її функції</td></tr>
+  </table>
+  <p class="kv">Числа — діапазони питомої ваги з <a href="https://testportal.gov.ua/wp-content/uploads/2025/05/Programa-yedynogo-vstupnogo-vyprobuvannya-z-metodologiyi-naukovyh-doslidzhen.pdf">офіційної програми МОН</a>. Найбільше часу віддай розділу 2.</p>
+
+  <h3>Сім навчальних сесій</h3>
+  <table>
+    <tr><th>Сесія</th><th>Фокус</th><th>Результат</th></tr>
+    <tr><td>1</td><td>Формат + наука, ненаука, псевдонаука; критерії науковості</td><td>власна таблиця відмінностей + 20 тестів</td></tr>
+    <tr><td>2</td><td>Методологія, метод, методика; рівні й принципи</td><td>картки термінів + 30 тестів</td></tr>
+    <tr><td>3</td><td>Емпіричний і теоретичний рівні; методи</td><td>розкласти 20 прикладів за методами</td></tr>
+    <tr><td>4</td><td>Мета, завдання, об’єкт, предмет, актуальність, новизна</td><td>5 мінікейсів + 30 тестів</td></tr>
+    <tr><td>5</td><td>Інформація, джерела, пошук, відкрита наука, ШІ</td><td>таблиця ризиків/переваг + 30 тестів</td></tr>
+    <tr><td>6</td><td>Етика, академічна доброчесність, публікації</td><td>класифікувати 20 порушень + повний демоваріант</td></tr>
+    <tr><td>7</td><td>Розбір помилок і повторення слабких тем</td><td>1 повний тест: 100 завдань / 150 хв</td></tr>
+  </table>
+
+  <h3>1. Наука та наукові дослідження <span class="tag">20–30%</span></h3>
+  <h3>Наука як феномен</h3>
+  <table>
+    <tr><th>Вимір науки</th><th>Сутність</th><th>Приклад</th></tr>
+    <tr><td><b>Система знань</b></td><td>взаємопов’язані факти, поняття, гіпотези, закони, теорії, принципи й методи</td><td>еволюційна теорія</td></tr>
+    <tr><td><b>Діяльність</b></td><td>цілеспрямоване отримання, перевірка, обґрунтування й систематизація нового знання</td><td>експеримент, аналіз даних</td></tr>
+    <tr><td><b>Соціальний інститут</b></td><td>спільнота, норми, установи, ролі, фінансування та комунікація</td><td>університет, академія, журнал</td></tr>
+  </table>
+  <p><b>Наука</b> прагне об’єктивного, раціонально обґрунтованого та перевірюваного знання. Філософія ставить найзагальніші світоглядні питання й аналізує засади пізнання; релігія спирається також на віру та одкровення; мистецтво освоює світ переважно через образ і естетичний досвід. Вони можуть взаємодіяти, але мають різні способи обґрунтування.</p>
+
+  <h3>Критерії, функції та класифікації науки</h3>
+  <ul>
+    <li><b>Критерії науковості:</b> об’єктивність і предметність, системність, перевірюваність, раціональність, доказовість, обґрунтованість і достовірність, прогностичність, власний понятійний апарат і методологія.</li>
+    <li><b>Функції:</b> пізнавальна (опис/пояснення), евристична (нове), практична/виробнича, світоглядна, соціальна, культурно-виховна та освітня.</li>
+    <li><b>За метою:</b> фундаментальні дослідження розширюють базове знання; прикладні спрямовані на практичну проблему; розробки перетворюють знання на конкретний продукт або технологію.</li>
+    <li><b>За предметом:</b> природничі, технічні, суспільні, гуманітарні науки.</li>
+  </ul>
+
+  <h3>Демаркація: наука, ненаука, псевдонаука, протонаука</h3>
+  <table>
+    <tr><th>Тип</th><th>Як розпізнати</th></tr>
+    <tr><td><b>Наука</b></td><td>твердження узгоджують із фактами, перевіряють; результати мають бути відтворюваними, критика — допустимою</td></tr>
+    <tr><td><b>Ненаука</b></td><td>сфера не ставить наукової мети або не застосовує наукового способу обґрунтування; це не обов’язково обман</td></tr>
+    <tr><td><b>Псевдонаука</b></td><td>імітує науковість, але уникає перевірки, вибірково бере факти, не приймає спростувань</td></tr>
+    <tr><td><b>Протонаука</b></td><td>історична рання форма знання, з якої могла розвинутися наука, але сучасним стандартам ще не відповідала</td></tr>
+  </table>
+  <p class="kv"><b>Науковий скептицизм</b> — вимога достатніх доказів і готовність переглядати висновок; це не автоматичне заперечення всього.</p>
+
+  <h3>Структурні елементи знання</h3>
+  <table>
+    <tr><th>Елемент</th><th>Коротке визначення</th></tr>
+    <tr><td>Факт</td><td>достовірно встановлене знання про подію або явище</td></tr>
+    <tr><td>Поняття / термін / категорія</td><td>поняття відображає істотні ознаки; термін його називає; категорія — гранично загальне поняття</td></tr>
+    <tr><td>Проблема</td><td>усвідомлена суперечність або питання, для якого бракує знання</td></tr>
+    <tr><td>Гіпотеза</td><td>обґрунтоване припущення, яке потребує перевірки</td></tr>
+    <tr><td>Концепція</td><td>цілісна система поглядів і провідний задум пояснення</td></tr>
+    <tr><td>Теорія</td><td>розвинена систематизована форма знання, що пояснює закономірні зв’язки</td></tr>
+    <tr><td>Закон / закономірність</td><td>закон фіксує необхідний істотний повторюваний зв’язок; закономірність — стійку тенденцію або сукупність зв’язків</td></tr>
+    <tr><td>Принцип</td><td>вихідне керівне положення</td></tr>
+  </table>
+
+  <h3>Організація науки та дослідницький процес</h3>
+  <p>Закони України «Про наукову і науково-технічну діяльність» і «Про вищу освіту» регулюють основи наукової діяльності та підготовки фахівців. Третій освітньо-науковий рівень веде до ступеня <b>доктора філософії</b>; третій освітньо-творчий — <b>доктора мистецтва</b>.</p>
+  <p><b>Етапи дослідження:</b> визначення проблеми → підготовка (джерела, план, методи) → виконання й отримання даних → аналіз → оприлюднення → обговорення та уточнення результатів.</p>
+  <p><b>Класифікувати дослідження</b> можна за цільовим призначенням, методами, джерелом фінансування, зв’язком із виробництвом, тривалістю, стадією, кількістю науковців (індивідуальне/групове) і кількістю галузей (одногалузеве, комплексне, big science).</p>
+
+  <h3>Відкрита наука</h3>
+  <p><b>Відкрита наука</b> — підхід, що робить наукові знання, процеси та комунікацію доступнішими, прозорішими й придатними до співпраці. Чотири складові за рамкою UNESCO:</p>
+  <ol>
+    <li>відкриті наукові знання (публікації, дані, програмне забезпечення, апаратні засоби);</li>
+    <li>відкрита наукова інфраструктура;</li>
+    <li>відкрита участь суспільних суб’єктів;</li>
+    <li>відкритий діалог з іншими системами знань.</li>
+  </ol>
+  <p><b>Цінності:</b> якість і доброчесність, колективна користь, рівність і справедливість, різноманітність та інклюзивність. <b>Принципи:</b> прозорість і критичний аналіз, рівність можливостей, відповідальність і повага, співпраця, гнучкість, сталість.</p>
+  <div class="box"><b>Переваги:</b> швидший обмін, повторна перевірка, відтворюваність, ширша участь. <b>Ризики:</b> витрати на інфраструктуру, нерівність доступу, приватність і безпека даних, неправильне повторне використання, конфлікти з інтелектуальною власністю.</div>
+
+  <h3>2. Методологія наукового дослідження <span class="tag">40–50%</span></h3>
+  <h3>Ключові розрізнення</h3>
+  <table>
+    <tr><th>Поняття</th><th>Коротко</th><th>Пастка</th></tr>
+    <tr><td><b>Методологія</b></td><td>система принципів, підходів і знань про організацію пізнання</td><td>не один конкретний прийом</td></tr>
+    <tr><td><b>Метод</b></td><td>спосіб досягнення мети / розв’язання завдання</td><td>ширше за конкретну процедуру</td></tr>
+    <tr><td><b>Методика</b></td><td>сукупність конкретних прийомів і процедур застосування методу</td><td>відповідає «як саме виконати»</td></tr>
+    <tr><td><b>Об’єкт</b></td><td>ширша частина реальності, на яку спрямоване дослідження</td><td>не плутай із конкретним аспектом</td></tr>
+    <tr><td><b>Предмет</b></td><td>конкретний аспект, властивість або зв’язок усередині об’єкта</td><td>предмет вужчий за об’єкт</td></tr>
+    <tr><td><b>Мета</b></td><td>очікуваний кінцевий результат</td><td>одна, не список дій</td></tr>
+    <tr><td><b>Завдання</b></td><td>кроки, потрібні для досягнення мети</td><td>формулюй дієсловами: визначити, порівняти</td></tr>
+  </table>
+
+  <h3>Методологія: значення, функції, структура</h3>
+  <ul>
+    <li><b>У широкому значенні</b> — система найзагальніших принципів, підходів, категорій і способів організації пізнання; <b>у вузькому</b> — вчення про методи наукового дослідження.</li>
+    <li><b>Мета</b> — забезпечити обґрунтований вибір і застосування способів отримання надійного знання.</li>
+    <li><b>Функції:</b> описова (як реально досліджують), нормативна (як слід), критична (оцінювання засад і меж), прогностична (перспективи способів пізнання).</li>
+    <li><b>Структура за змістом:</b> принципи, парадигми, цінності, теорії, поняття, методи й прийоми.</li>
+    <li><b>Рівні:</b> філософський → загальнонауковий → конкретно-науковий. Від загальних світоглядних засад до способів певної дисципліни.</li>
+  </ul>
+  <p><b>Ознаки наукового методу:</b> об’єктивність, надійність (сталі результати), валідність (вимірює саме потрібне), детермінованість, результативність і адекватність меті. <b>Методика</b> містить мету, завдання, об’єкт, предмет, методи, інструменти, процедури та критерії оцінювання; має бути адаптивною, відтворюваною й ефективною.</p>
+
+  <h3>Принципи та підходи</h3>
+  <p><b>Основні методологічні принципи:</b> об’єктивність, всебічність, сутнісний аналіз, єдність історичного й логічного, доказовість, альтернативність і системність.</p>
+  <ul>
+    <li><b>Системний підхід:</b> об’єкт розглядають як систему елементів, зв’язків, структури, функцій і взаємодії із середовищем; властивості цілого не зводять механічно до властивостей частин.</li>
+    <li><b>Аксіологічний підхід:</b> аналізує цінності наукового знання, діяльності та самого дослідника; наука не існує поза етичною відповідальністю.</li>
+  </ul>
+
+  <h3>Наукове пізнання</h3>
+  <p>Компоненти: мета, пізнавальна діяльність суб’єкта, об’єкт і предмет, методи та засоби, логічні форми й мова, результат. Принципи: об’єктивність; пояснення багатьох явищ небагатьма загальними положеннями; достатня повнота обґрунтування; системність; єдність аналізу й синтезу; історичного й логічного; сходження від абстрактного до конкретного.</p>
+  <table>
+    <tr><th>Рівень</th><th>Що робить</th><th>Форми результату</th></tr>
+    <tr><td><b>Емпіричний</b></td><td>спостерігає, фіксує факти, вимірює, експериментує, встановлює зовнішні зв’язки</td><td>емпіричні факти й залежності</td></tr>
+    <tr><td><b>Теоретичний</b></td><td>розкриває внутрішні, загальні й необхідні зв’язки, систематизує та пояснює</td><td>проблеми, гіпотези, закони, принципи, теорії</td></tr>
+  </table>
+  <p><b>Факт дійсності</b> — сама подія; <b>науковий факт</b> — перевірене й зафіксоване знання про неї. Факти створюють емпіричну базу, допомагають висувати та перевіряти гіпотези. Функції теорії: синтетична, пояснювальна, методологічна, прогностична й практична.</p>
+
+  <h3>Методи: впізнай за дією</h3>
+  <ul>
+    <li><b>Емпіричні:</b> спостереження (без активного втручання), порівняння, вимірювання (числове значення), експеримент (керована зміна умов).</li>
+    <li><b>Теоретичні:</b> аксіоматичний; гіпотетико-дедуктивний; абстрагування й конкретизація; історичний і логічний.</li>
+    <li><b>Емпіричний рівень</b> фіксує факти та зовнішні зв’язки; <b>теоретичний</b> пояснює внутрішні закономірності через гіпотези, закони й теорії.</li>
+  </ul>
+
+  <h3>Емпіричні методи</h3>
+  <table>
+    <tr><th>Метод</th><th>Сутність</th><th>Важлива умова</th></tr>
+    <tr><td><b>Спостереження</b></td><td>цілеспрямоване систематичне сприймання без активної зміни об’єкта</td><td>план, критерії, фіксація, мінімізація упередження</td></tr>
+    <tr><td><b>Порівняння</b></td><td>виявлення подібностей і відмінностей</td><td>порівнюваність об’єктів та однакові критерії</td></tr>
+    <tr><td><b>Вимірювання</b></td><td>визначення числового значення величини відносно одиниці</td><td>інструмент, шкала, процедура; врахування систематичної й випадкової похибки</td></tr>
+    <tr><td><b>Експеримент</b></td><td>активна керована зміна умов для перевірки причинного припущення</td><td>гіпотеза → план і змінні → проведення → аналіз → висновок</td></tr>
+  </table>
+
+  <h3>Теоретичні методи</h3>
+  <ul>
+    <li><b>Аксіоматичний:</b> із прийнятих без доведення аксіом за логічними правилами виводять інші положення.</li>
+    <li><b>Гіпотетико-дедуктивний:</b> висувають гіпотезу, дедуктивно виводять перевірні наслідки й зіставляють їх із фактами.</li>
+    <li><b>Абстрагування:</b> подумки відволікаються від неістотного й виділяють істотне; <b>конкретизація</b> повертає абстрактне в систему реальних зв’язків.</li>
+    <li><b>Сходження від абстрактного до конкретного:</b> від найпростішої абстракції послідовно відтворюють багатство зв’язків цілого.</li>
+    <li><b>Історичний метод</b> відтворює розвиток у часовій конкретності; <b>логічний</b> — необхідні зв’язки й закономірності розвитку в очищеній формі.</li>
+  </ul>
+  <div class="box warn"><b>Три методологічні крайнощі:</b> негативізм недооцінює роль методів; анархізм заперечує універсальні обов’язкові правила й абсолютизує свободу вибору; ейфорія перебільшує силу одного «правильного» методу. Результат залежить від методу, але жоден метод не гарантує істини автоматично.</div>
+
+  <h3>3. Організація наукової діяльності <span class="tag">19–29%</span></h3>
+  <h3>Елементи дослідження</h3>
+  <ul>
+    <li><b>Актуальність</b> — чому проблему потрібно розв’язувати; це не просто «тема цікава».</li>
+    <li><b>Тема</b> визначається через огляд літератури, наявні ресурси й компетентності, теоретичне та практичне значення очікуваного результату.</li>
+    <li><b>Мета</b> описує кінцевий результат; <b>завдання</b> — послідовні кроки; <b>об’єкт</b> — широка сфера; <b>предмет</b> — конкретний аспект об’єкта.</li>
+    <li><b>Наукова новизна</b> може бути відкриттям, уточненням або доповненням знань, удосконаленням моделі, методу чи технології.</li>
+  </ul>
+  <div class="box good"><b>Приклад:</b> тема — вплив формату зворотного зв’язку на навчальну мотивацію студентів. Об’єкт — навчальна мотивація студентів; предмет — вплив письмового й усного зворотного зв’язку на її рівень; мета — визначити характер цього впливу; завдання — проаналізувати джерела, обрати шкалу, зібрати й порівняти дані.</div>
+
+  <h3>Наукова інформація, джерела й пошук</h3>
+  <p><b>Властивості:</b> адекватність (відповідність об’єкту), релевантність (відповідність запиту), правильність, точність і актуальність. <b>Функції:</b> кумулятивна, комунікативна, культурологічна та соціальної пам’яті.</p>
+  <table>
+    <tr><th>Джерело</th><th>Що містить</th><th>Приклад</th></tr>
+    <tr><td><b>Первинне</b></td><td>безпосередньо нові дані або оригінальний результат</td><td>стаття з власним експериментом, дисертація, набір даних</td></tr>
+    <tr><td><b>Вторинне</b></td><td>аналіз, систематизацію або узагальнення первинних джерел</td><td>оглядова стаття, енциклопедія, бібліографічний покажчик</td></tr>
+  </table>
+  <p>Пошук ведуть у традиційних та електронних каталогах, наукових базах даних, електронних виданнях, репозиторіях і архівах. Добрий запит використовує ключові поняття, синоніми й логічні оператори; знайдене перевіряють за авторством, виданням, методами, датою та зв’язком із питанням.</p>
+
+  <h3>Штучний інтелект у дослідженні</h3>
+  <p><b>Можливості:</b> автоматизація пошуку, попереднього сортування й обробки великих масивів, рутинних операцій. <b>Ризики:</b> вигадування фактів і джерел, непрозорість методики, упередження, витік даних, порушення авторського права та доброчесності. Дослідник відповідає за перевірку, опис застосування й кінцевий результат.</p>
+
+  <h3>Методологічна культура та етика</h3>
+  <p><b>Методологічна культура</b> охоплює методологічність мислення, рефлексію, грамотність, компетентність і культуру роботи з інформацією. Принципи етики: об’єктивність і неупередженість, відповідальність, повага до інтелектуальної власності, уникнення або прозоре декларування конфлікту інтересів.</p>
+  <p><b>Цінності академічної доброчесності:</b> чесність, довіра, справедливість, повага, відповідальність і прозорість.</p>
+
+  <h3>Доброчесність: не переплутай</h3>
+  <table>
+    <tr><th>Порушення</th><th>Ознака</th></tr>
+    <tr><td><b>Плагіат</b></td><td>чужі результати або текст подано як власні без належного посилання</td></tr>
+    <tr><td><b>Самоплагіат</b></td><td>раніше оприлюднені власні результати подано як нові</td></tr>
+    <tr><td><b>Фабрикація</b></td><td>вигадано дані або факти, яких не було</td></tr>
+    <tr><td><b>Фальсифікація</b></td><td>свідомо змінено або приховано наявні дані</td></tr>
+    <tr><td><b>Списування / обман / хабарництво</b></td><td>неправомірна допомога, неправдива інформація або неправомірна вигода</td></tr>
+  </table>
+  <p>Відповідальність залежить від правил установи й законодавства та може включати повторне оцінювання, позбавлення результату чи кваліфікації, дисциплінарні та інші наслідки.</p>
+
+  <h3>4. Представлення досліджень <span class="tag">5–7%</span></h3>
+  <p><b>Наукова публікація</b> — структуроване представлення проблеми, методів, результатів і науково обґрунтованих висновків. Її функції:</p>
+  <ul>
+    <li>оприлюднити результати й забезпечити спільноту первинною інформацією;</li>
+    <li>встановити пріоритет і засвідчити особистий внесок автора;</li>
+    <li>підтвердити достовірність, новизну та науковий рівень;</li>
+    <li>зафіксувати апробацію, упровадження та завершення етапу роботи.</li>
+  </ul>
+
+  <h3>Фінальна карта повторення</h3>
+  <div class="box"><b>Перед повним тестом перевір:</b> чи розрізняєш науку/псевдонауку; факт/гіпотезу/теорію; фундаментальне/прикладне; методологію/метод/методику; емпіричне/теоретичне; спостереження/експеримент; об’єкт/предмет; мету/завдання; первинне/вторинне джерело; фабрикацію/фальсифікацію/плагіат/самоплагіат.</div>
+  <p class="kv"><b>Межі посібника:</b> формулювання стисло передають усі теми офіційної програми. Для звикання до стилю запитань додатково виконай <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">офіційні зразки ЄВВ</a>.</p>
+</section>
+
+<section id="drill">
+  <h2>✍️ Практичний блок — <span id="drillTotal">0</span> задач із відповідями</h2>
+  <p class="kv">Розв'яжи, потім розгорни відповідь. Ціль — швидкість і впевненість, не ідеал.</p>
+
+  <details><summary>1. Ділення: 8352 ÷ 8 = ?</summary>
+  <div class="ans"><b>1044</b>. 8:8=1, 3:8=0(ост.3)→35:8=4(ост.3)→32:8=4. Перевір: 1044·8=8352. ✓</div></details>
+
+  <details><summary>2. Скільки відсотків складає 63 від 180?</summary>
+  <div class="ans">63/180 = 0,35 = <b>35%</b>.</div></details>
+
+  <details><summary>3. Ціна зросла з 250 до 300 грн. На скільки відсотків?</summary>
+  <div class="ans">(300−250)/250 = 50/250 = 0,2 = <b>+20%</b>.</div></details>
+
+  <details><summary>4. У класі 28 учнів. Математику люблять 15, фізику 12, обидві — 6. Скільки не люблять жодну?</summary>
+  <div class="ans">Хоча б одну: 15+12−6 = 21. Не люблять: 28−21 = <b>7</b>.</div></details>
+
+  <details><summary>5. У коробці кульки 4 кольорів. Скільки взяти навмання, щоб гарантовано були 2 однакові?</summary>
+  <div class="ans">Діріхле: кольорів 4 → бери <b>5</b> (4 могли б бути різні, 5-та повторить колір).</div></details>
+
+  <details><summary>6. Скількома способами розсадити 4 людей на 4 стільці?</summary>
+  <div class="ans">4! = 4·3·2·1 = <b>24</b>.</div></details>
+
+  <details><summary>7. Обрати 3 книги з 5 (порядок неважливий) — скільки способів?</summary>
+  <div class="ans">C(5,3) = 5!/(3!·2!) = 120/(6·2) = <b>10</b>.</div></details>
+
+  <details><summary>8. 2/5 + 1/4 = ?</summary>
+  <div class="ans">Спільний знам. 20: 8/20 + 5/20 = <b>13/20</b> (= 0,65).</div></details>
+
+  <details><summary>9. Ряд: 3, 6, 12, 24, ? Наступне число?</summary>
+  <div class="ans">Кожне ×2 → <b>48</b>.</div></details>
+
+  <details><summary>10. Ряд: 1, 4, 9, 16, 25, ? Наступне?</summary>
+  <div class="ans">Квадрати 1²…5², далі 6² = <b>36</b>.</div></details>
+
+  <details><summary>11. Аналогія: Лікар → пацієнт, як учитель → ?</summary>
+  <div class="ans"><b>Учень</b> (той, з ким працює за професією).</div></details>
+
+  <details><summary>12. Потяг іде 240 км за 3 год. Скільки за 5 год тією ж швидкістю?</summary>
+  <div class="ans">Швидкість 240/3 = 80 км/год. За 5 год: 80·5 = <b>400 км</b>.</div></details>
+
+  <details><summary>13. «Якщо студент склав ЄВІ, він допущений до вступу.» Студент НЕ допущений. Що випливає?</summary>
+  <div class="ans">Контрапозиція: <b>студент НЕ склав ЄВІ</b>. (А ось «допущений ⟹ склав» стверджувати не можна — це обернення.)</div></details>
+
+  <details><summary>14. «Усі кактуси — рослини. Ця рослина — не кактус.» Який висновок валідний?</summary>
+  <div class="ans"><b>Жодного нового висновку про належність до інших груп зробити не можна.</b> Уже відомо, що це рослина й не кактус; з «не кактус» не випливає «не рослина» — це помилка заперечення передумови.</div></details>
+
+  <details><summary>15. Яка це помилка: «Він програв суперечку, бо погано вдягнений»?</summary>
+  <div class="ans"><b>Ad hominem</b> (до людини) — оцінюють особу, а не аргумент.</div></details>
+
+  <details><summary>16. Скидка 25% на товар 800 грн, потім ще −10% на касі. Кінцева ціна?</summary>
+  <div class="ans">800·0,75 = 600 → 600·0,9 = <b>540 грн</b>. (Не −35%! Було б 520 — це пастка.)</div></details>
+
+  <details><summary>17. Середнє 4 чисел = 15. Додали пʼяте — середнє стало 18. Яке пʼяте число?</summary>
+  <div class="ans">Сума 4 = 60. Сума 5 = 90. Пʼяте = 90−60 = <b>30</b>.</div></details>
+
+  <details><summary>18. Поділили 84 грн у відношенні 3:4. Скільки в більшій частці?</summary>
+  <div class="ans">Частин 7, одна = 12. Більша = 4·12 = <b>48</b>.</div></details>
+
+  <details><summary>19. Початковий день — вівторок. Який день буде через 45 днів?</summary>
+  <div class="ans">45 mod 7 = 3. Вт → +3 = <b>пʼятниця</b>.</div></details>
+
+  <details><summary>20. English: She has lived here ___ 2015. (since / for / from)</summary>
+  <div class="ans"><b>since</b> (Present Perfect, точка початку). «for» — для проміжку: for 10 years.</div></details>
+
+  <details><summary>21. English: If I ___ rich, I would travel a lot. (am / was / were / will be)</summary>
+  <div class="ans"><b>were</b> (2-й Conditional, нереальне теперішнє; were для всіх осіб).</div></details>
+
+  <details><summary>22. English: This bridge ___ in 1932. (built / was built / has built)</summary>
+  <div class="ans"><b>was built</b> (пасив + Past Simple: дату вказано).</div></details>
+
+  <details><summary>23. English: word formation — He made a careless mistake. (care) — правильна форма?</summary>
+  <div class="ans"><b>careless</b> — потрібен прикметник перед іменником «mistake»; -less = «без».</div></details>
+
+  <details><summary>24. Порядок: Анна виступає раніше за Богдана, а Богдан — раніше за Віру. Чи може порядок бути Віра — Анна — Богдан?</summary>
+  <div class="ans"><b>Ні.</b> З умов маємо єдиний відносний порядок Анна → Богдан → Віра; у запропонованому варіанті Віра стоїть раніше за обох.</div></details>
+
+  <details><summary>25. У групі 10 студентів середній бал 80, а в групі 20 студентів — 65. Який середній бал усіх 30 студентів?</summary>
+  <div class="ans">Загальна сума балів: 10·80 + 20·65 = 800 + 1300 = 2100. Середнє: 2100/30 = <b>70</b>. Не 72,5: групи мають різну чисельність.</div></details>
+
+  <details><summary>26. English matching: You need a quiet place to study after 8 p.m. Яке оголошення підходить: A) Library open until 10 p.m.; B) Café with live music until midnight?</summary>
+  <div class="ans"><b>A.</b> Бібліотека задовольняє обидві ключові умови: місце для навчання й робота після 20:00; live music суперечить вимозі quiet.</div></details>
+
+  <details><summary>27. English collocation: She has ___ great progress this year. (done / made / taken)</summary>
+  <div class="ans"><b>made</b>: стала сполука <span class="mono">make progress</span>.</div></details>
+
+  <details><summary>28. Контекст: «Цей метод виявився ___: результат отримали швидше». (ефектним / ефективним)</summary>
+  <div class="ans"><b>Ефективним</b> — він дав потрібний результат. <i>Ефектний</i> означає яскравий, вражаючий зовні.</div></details>
+
+  <details><summary>29. Пунктуація: який знак? «Є одна умова __ не зупинятися після складного завдання».</summary>
+  <div class="ans"><b>Двокрапка:</b> друга частина пояснює зміст слова «умова»: «Є одна умова: не зупинятися…»</div></details>
+
+  <details><summary>30. Позиція автора: «Авжеж, чудова ідея — почати готуватися за п’ять хвилин до іспиту». Це схвалення чи іронія?</summary>
+  <div class="ans"><b>Іронія.</b> Буквально позитивна оцінка «чудова» суперечить очевидно невдалій ситуації.</div></details>
+
+  <details><summary>31. Методологія: що вужче — об’єкт чи предмет дослідження?</summary>
+  <div class="ans"><b>Предмет.</b> Об’єкт — ширша сфера або явище; предмет — конкретний аспект чи зв’язок усередині об’єкта.</div></details>
+
+  <details><summary>32. Методологія: дослідник керовано змінює одну умову й фіксує наслідок. Який метод?</summary>
+  <div class="ans"><b>Експеримент.</b> Його відрізняє активне, контрольоване втручання; під час спостереження дослідник лише фіксує явище.</div></details>
+
+  <details><summary>33. Методологія: «вигадати результати 20 інтерв’ю, яких не проводили» — фабрикація чи фальсифікація?</summary>
+  <div class="ans"><b>Фабрикація</b> — створення неіснуючих даних. Фальсифікація — свідома зміна або приховування даних, які реально отримали.</div></details>
+
+  <details><summary>34. Методологія: автор повторно публікує власний старий текст як новий без посилання. Що це?</summary>
+  <div class="ans"><b>Самоплагіат.</b> Власні раніше оприлюднені результати подано як нові.</div></details>
+
+  <details><summary>35. Методологія: спостереження й експеримент — емпіричні чи теоретичні методи?</summary>
+  <div class="ans"><b>Емпіричні.</b> Вони безпосередньо дають або фіксують досвідні факти.</div></details>
+
+  <details><summary>36. Методологія: чим методика відрізняється від методу?</summary>
+  <div class="ans"><b>Метод</b> — загальний спосіб досягнення мети; <b>методика</b> — конкретна система прийомів і процедур його застосування.</div></details>
+
+  <details><summary>37. Методологія: стаття з оригінальними результатами — первинне чи вторинне джерело?</summary>
+  <div class="ans"><b>Первинне.</b> Воно безпосередньо представляє нові результати. Огляд, що узагальнює інші роботи, є вторинним джерелом.</div></details>
+
+  <details><summary>38. Методологія: який розділ офіційної програми має найбільшу вагу?</summary>
+  <div class="ans"><b>«Загальне уявлення про методологію наукового дослідження» — 40–50%.</b> Саме його варто повторювати найдовше.</div></details>
+
+  <details><summary>39. Який вимір науки ілюструє університет із лабораторіями, посадами та правилами рецензування?</summary>
+  <div class="ans"><b>Наука як соціальний інститут:</b> ідеться про організації, ролі, норми та комунікацію спільноти.</div></details>
+
+  <details><summary>40. Чи є «твердження можна перевірити й потенційно спростувати» критерієм науковості?</summary>
+  <div class="ans"><b>Так.</b> Перевірюваність і відкритість до спростування відрізняють наукове твердження від такого, що захищене від будь-якої перевірки.</div></details>
+
+  <details><summary>41. Дослідження механізму пам’яті без безпосередньої практичної мети — фундаментальне чи прикладне?</summary>
+  <div class="ans"><b>Фундаментальне:</b> його мета — розширення базового знання. Розроблення конкретної терапії розладу пам’яті було б прикладним.</div></details>
+
+  <details><summary>42. Теорія ігнорує всі негативні результати та пояснює кожну можливу відповідь «прихованою силою». Яка ознака?</summary>
+  <div class="ans"><b>Псевдонауковість:</b> вибіркове використання фактів і захист твердження від спростування.</div></details>
+
+  <details><summary>43. «Можливе пояснення, яке ще потрібно перевірити» — проблема, гіпотеза чи закон?</summary>
+  <div class="ans"><b>Гіпотеза.</b> Проблема формулює дефіцит знання; закон описує встановлений необхідний зв’язок.</div></details>
+
+  <details><summary>44. Яка послідовність коректна: виконання → проблема → оприлюднення → підготовка?</summary>
+  <div class="ans"><b>Ні.</b> Коректно: проблема → підготовка → виконання й аналіз → оприлюднення → обговорення та уточнення.</div></details>
+
+  <details><summary>45. Відкритий репозиторій даних належить до відкритих знань чи відкритої інфраструктури?</summary>
+  <div class="ans"><b>Репозиторій як сервіс — відкрита інфраструктура;</b> опублікований у ньому набір даних — відкриті наукові знання.</div></details>
+
+  <details><summary>46. Чи означає відкрита наука «публікувати всі персональні дані без обмежень»?</summary>
+  <div class="ans"><b>Ні.</b> Відкритість узгоджують із приватністю, безпекою, етикою та інтелектуальною власністю.</div></details>
+
+  <details><summary>47. Яка функція методології встановлює, як слід проводити дослідження?</summary>
+  <div class="ans"><b>Нормативна.</b> Описова пояснює наявну практику, критична оцінює її засади, прогностична — перспективи.</div></details>
+
+  <details><summary>48. Розташуйте рівні від найзагальнішого: конкретно-науковий, філософський, загальнонауковий.</summary>
+  <div class="ans"><b>Філософський → загальнонауковий → конкретно-науковий.</b></div></details>
+
+  <details><summary>49. Метод дає однакові результати повторно, але вимірює не ту властивість. Надійний чи валідний?</summary>
+  <div class="ans"><b>Надійний, але не валідний.</b> Надійність — стабільність; валідність — відповідність тому, що потрібно виміряти.</div></details>
+
+  <details><summary>50. Розгляд університету як взаємодії студентів, викладачів, правил і середовища — який підхід?</summary>
+  <div class="ans"><b>Системний:</b> аналізують елементи, структуру, функції, зв’язки та середовище цілого.</div></details>
+
+  <details><summary>51. Аналіз відповідальності дослідника й цінності відкритості — який підхід?</summary>
+  <div class="ans"><b>Аксіологічний,</b> оскільки предметом є цінності науки та науковця.</div></details>
+
+  <details><summary>52. Який рівень пізнання формулює закони та пояснює внутрішні закономірності?</summary>
+  <div class="ans"><b>Теоретичний.</b> Емпіричний насамперед фіксує факти й зовнішні залежності.</div></details>
+
+  <details><summary>53. Подія сталася в природі, але дослідник ще її не зафіксував. Це науковий факт?</summary>
+  <div class="ans"><b>Ще ні.</b> Це факт дійсності; науковим фактом він стає як достовірно встановлене та зафіксоване знання.</div></details>
+
+  <details><summary>54. Вивести передбачення з гіпотези й перевірити його даними — який метод?</summary>
+  <div class="ans"><b>Гіпотетико-дедуктивний.</b></div></details>
+
+  <details><summary>55. Побудова геометрії з прийнятих вихідних положень — який метод?</summary>
+  <div class="ans"><b>Аксіоматичний:</b> наслідки логічно виводять з аксіом.</div></details>
+
+  <details><summary>56. Дослідник лише фіксує поведінку; інший керовано змінює освітлення. Які методи?</summary>
+  <div class="ans">Перший — <b>спостереження</b>, другий — <b>експеримент</b>.</div></details>
+
+  <details><summary>57. Порівнювати середні двох груп, виміряних різними шкалами без перерахунку, коректно?</summary>
+  <div class="ans"><b>Ні.</b> Порівняння потребує порівнюваних об’єктів, однакових критеріїв і сумісних одиниць.</div></details>
+
+  <details><summary>58. Прилад завжди завищує значення на 2 одиниці. Яка це похибка?</summary>
+  <div class="ans"><b>Систематична:</b> зсув повторюється в одному напрямі. Випадкова похибка непередбачувано коливається.</div></details>
+
+  <details><summary>59. Історичний і логічний методи: який відтворює події в часовій конкретності?</summary>
+  <div class="ans"><b>Історичний.</b> Логічний відтворює необхідні зв’язки й закономірності розвитку.</div></details>
+
+  <details><summary>60. Твердження «жодні методологічні правила не потрібні» — негативізм, анархізм чи ейфорія?</summary>
+  <div class="ans"><b>Методологічний анархізм.</b> Негативізм применшує роль методів; ейфорія перебільшує можливості одного методу.</div></details>
+
+  <details><summary>61. «Чому проблему варто досліджувати саме тепер?» — це актуальність чи новизна?</summary>
+  <div class="ans"><b>Актуальність.</b> Новизна відповідає, яке нове знання або вдосконалення отримано.</div></details>
+
+  <details><summary>62. «Дослідити освіту» — це добра мета?</summary>
+  <div class="ans"><b>Ні, надто широко.</b> Мета має називати очікуваний результат, наприклад: «визначити зв’язок між форматом зворотного зв’язку та мотивацією студентів».</div></details>
+
+  <details><summary>63. Інформація відповідає темі запиту, але вже застаріла. Яка властивість є, а якої бракує?</summary>
+  <div class="ans">Вона <b>релевантна</b>, але їй бракує <b>актуальності</b>.</div></details>
+
+  <details><summary>64. Систематичний огляд узагальнює 50 оригінальних статей. Яке це джерело?</summary>
+  <div class="ans"><b>Вторинне.</b> Оригінальні статті з новими даними є первинними.</div></details>
+
+  <details><summary>65. Яка функція інформації забезпечує накопичення знань?</summary>
+  <div class="ans"><b>Кумулятивна.</b> Комунікативна передає знання між людьми.</div></details>
+
+  <details><summary>66. ШІ запропонував посилання. Чи можна цитувати його без перевірки?</summary>
+  <div class="ans"><b>Ні.</b> Треба відкрити першоджерело, перевірити автора, назву, зміст і реквізити; модель може вигадати джерело.</div></details>
+
+  <details><summary>67. Автор видалив незручні реальні вимірювання, щоб підтвердити гіпотезу. Яке порушення?</summary>
+  <div class="ans"><b>Фальсифікація:</b> наявні дані свідомо змінено або приховано.</div></details>
+
+  <details><summary>68. Дослідник має фінансовий зв’язок із виробником препарату. Що правильно?</summary>
+  <div class="ans"><b>Прозоро задекларувати конфлікт інтересів</b> і вжити заходів для неупередженості; приховування суперечить етиці.</div></details>
+
+  <details><summary>69. Яка функція публікації фіксує, хто першим повідомив результат?</summary>
+  <div class="ans"><b>Встановлення пріоритету автора.</b></div></details>
+
+  <details><summary>70. У публікації є результати й висновки, але не описано методи. Чому це проблема?</summary>
+  <div class="ans">Без методів неможливо належно оцінити обґрунтованість і <b>відтворити</b> дослідження; повна наукова публікація структуровано подає проблему, методи, результати й висновки.</div></details>
+
+  <hr>
+  <p class="kv"><b>Офіційна практика:</b> <a href="https://testportal.gov.ua/pidgotovka-do-yevi-yevv-2026/">сторінка підготовки УЦОЯО</a>, <a href="https://testportal.gov.ua/demonstratsijni-varianty-yevi/">демонстраційні варіанти ЄВІ</a> та <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">зразки й характеристика ЄВВ</a>. Для ЄВІ відпрацюй окремі слабкі типи; для ЄВВ виконай щонайменше один повний прогін 100 завдань за 150 хвилин.</p>
+</section>
+
+<section>
+  <h2>🎯 Останнє перед стартом</h2>
+  <div class="chk">✅ <span>Прийди завчасно: допуск починається за 30 хв і припиняється за 5 хв до початку.</span></div>
+  <div class="chk">✅ <span>Обов’язково: оригінал екзаменаційного листка та документ, що посвідчує особу (або його цифровий аналог у Дії).</span></div>
+  <div class="chk">✅ <span>Бажано: запрошення-перепустка, 2–3 ручки з чорним чорнилом, прозора пляшка води без етикетки, теплий одяг.</span></div>
+  <div class="chk">✅ <span>Розподілив час: ТЗНК ~75 хв, англійська ~45 хв. Слідкуй за годинником.</span></div>
+  <div class="chk">✅ <span>Малюй кола Ейлера й стовпчики на чернетці — не тримай у голові.</span></div>
+  <div class="chk">✅ <span>Не залипай &gt;1 хв. Позначай і йди далі.</span></div>
+  <div class="chk">✅ <span>Жодної порожньої клітинки — в кінці вгадай серед 2 найкращих варіантів.</span></div>
+  <div class="chk">✅ <span>Останні 5 хв — перевір, що всі відповіді вибрано й збережено в системі.</span></div>
+  <div class="chk">✅ <span>Чернетку нададуть у пункті. За технічної проблеми або погіршення самопочуття одразу поклич інструктора.</span></div>
+  <p class="kv"><b>Джерело чекліста:</b> <a href="https://testportal.gov.ua/pravyla-prohodzhennya-yevi-yevv-2026/">офіційні правила проходження ЄВІ/ЄВВ-2026 УЦОЯО</a>.</p>
+  <div class="box good big">Ти вже знаєш більше, ніж думаєш. Завдання — не панікувати й акуратно зібрати «свої» бали. Успіху 💪</div>
+</section>
+
+<div class="foot">Складено 14.07.2026 · матеріал для швидкої підготовки · не офіційний документ УЦОЯО</div>
+</main>
+
+<button id="top" title="Нагору" aria-label="Нагору">↑</button>
+
+<script>
+(function(){
+  var top=document.getElementById('top');
+  var links=[].slice.call(document.querySelectorAll('.section-dot'));
+  var mobileLinks=[].slice.call(document.querySelectorAll('.mobile-section-menu a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var sectionTrackFill=document.getElementById('sectionTrackFill');
+  var mobileProgressFill=document.getElementById('mobileProgressFill');
+  var mobileSectionName=document.getElementById('mobileSectionName');
+  var mobileSectionPercent=document.getElementById('mobileSectionPercent');
+  var mobileSectionButton=document.getElementById('mobileSectionButton');
+  var mobileSectionMenu=document.getElementById('mobileSectionMenu');
+  var mobileSectionNav=document.querySelector('.mobile-section-nav');
+  var themeKey='evi-tznk-guide:theme:v1';
+  var themeToggle=document.getElementById('themeToggle');
+
+  function applyTheme(theme,save){
+    if(theme!=='sage' && theme!=='focus') return;
+    document.documentElement.setAttribute('data-theme',theme);
+    if(themeToggle){
+      var label=theme==='sage'?'Увімкнути темну тему':'Увімкнути світлу тему';
+      themeToggle.setAttribute('aria-label',label);
+      themeToggle.setAttribute('title',label);
+    }
+    if(save){ try{ localStorage.setItem(themeKey,theme); }catch(e){} }
+  }
+  applyTheme(document.documentElement.getAttribute('data-theme'),false);
+  if(themeToggle){
+    themeToggle.addEventListener('click',function(){
+      applyTheme(document.documentElement.getAttribute('data-theme')==='sage'?'focus':'sage',true);
+    });
+  }
+
+  function onScroll(){
+    var h=document.documentElement;
+    var sc=h.scrollTop||document.body.scrollTop;
+    var max=(h.scrollHeight-h.clientHeight)||1;
+    var pct=Math.max(0,Math.min(100,sc/max*100));
+    var pctText=Math.round(pct)+'%';
+    if(mobileProgressFill) mobileProgressFill.style.width=pct+'%';
+    if(mobileSectionPercent) mobileSectionPercent.textContent=pctText;
+    top.classList.toggle('show', sc>400);
+    // active nav
+    var idx=0, y=sc+140;
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) idx=i; }
+    links.forEach(function(l,i){
+      var active=i===idx;
+      l.classList.toggle('active',active);
+      if(active) l.setAttribute('aria-current','location'); else l.removeAttribute('aria-current');
+      var value=l.querySelector('.section-progress-value');
+      if(value) value.textContent=active?'· '+pctText:'';
+    });
+    mobileLinks.forEach(function(l,i){
+      var active=i===idx;
+      l.classList.toggle('active',active);
+      if(active) l.setAttribute('aria-current','location'); else l.removeAttribute('aria-current');
+    });
+    if(mobileSectionName && mobileLinks[idx]) mobileSectionName.textContent=mobileLinks[idx].textContent;
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+
+  function closeMobileMenu(){
+    if(!mobileSectionMenu || !mobileSectionButton) return;
+    mobileSectionMenu.hidden=true;
+    mobileSectionButton.setAttribute('aria-expanded','false');
+  }
+  if(mobileSectionButton && mobileSectionMenu){
+    mobileSectionButton.addEventListener('click',function(){
+      var willOpen=mobileSectionMenu.hidden;
+      mobileSectionMenu.hidden=!willOpen;
+      mobileSectionButton.setAttribute('aria-expanded',String(willOpen));
+    });
+    mobileLinks.forEach(function(link){link.addEventListener('click',closeMobileMenu);});
+    document.addEventListener('click',function(event){
+      if(!mobileSectionMenu.hidden && mobileSectionNav && !mobileSectionNav.contains(event.target)) closeMobileMenu();
+    });
+    document.addEventListener('keydown',function(event){
+      if(event.key==='Escape' && !mobileSectionMenu.hidden){ closeMobileMenu(); mobileSectionButton.focus(); }
+    });
+  }
+
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // practice counter — count opened <details> inside #drill
+  var drill=document.getElementById('drill');
+  var items=drill?[].slice.call(drill.querySelectorAll('details')):[];
+  // Group practice visually while keeping `items` in its original order so
+  // previously stored completion indexes remain compatible.
+  if(drill && items.length){
+    var groups={
+      tznk:{title:'🧠 ТЗНК',items:[]},
+      english:{title:'🇬🇧 Англійська мова',items:[]},
+      methodology:{title:'🔬 Методологія наукових досліджень',items:[]}
+    };
+    items.forEach(function(item,index){
+      var number=index+1;
+      var key=number>=31?'methodology':([20,21,22,23,26,27].indexOf(number)>-1?'english':'tznk');
+      groups[key].items.push(item);
+    });
+    var firstItem=items[0];
+    var groupsRoot=document.createElement('div');
+    groupsRoot.className='practice-groups';
+    drill.insertBefore(groupsRoot,firstItem);
+    ['tznk','english','methodology'].forEach(function(key){
+      var data=groups[key];
+      var group=document.createElement('div');
+      group.className='practice-group practice-group-'+key;
+      group.setAttribute('aria-labelledby','practice-'+key+'-title');
+      var title=document.createElement('h3');
+      title.className='practice-group-title';
+      title.id='practice-'+key+'-title';
+      title.innerHTML='<span>'+data.title+'</span><span class="practice-group-count">'+data.items.length+' завд.</span>';
+      group.appendChild(title);
+      data.items.forEach(function(item){group.appendChild(item);});
+      groupsRoot.appendChild(group);
+    });
+  }
+  var tot=document.getElementById('ctot');
+  var drillTotal=document.getElementById('drillTotal');
+  var num=document.getElementById('cnum');
+  if(tot) tot.textContent=items.length;
+  if(drillTotal) drillTotal.textContent=items.length;
+  // Keep native table sizing; scroll only the table when it is wider than the viewport.
+  [].slice.call(document.querySelectorAll('table')).forEach(function(table){
+    if(table.parentNode.classList && table.parentNode.classList.contains('table-scroll')) return;
+    var wrap=document.createElement('div');
+    wrap.className='table-scroll';
+    table.parentNode.insertBefore(wrap,table);
+    wrap.appendChild(table);
+  });
+
+  // Persist completed practice items. Storage can be unavailable for local files,
+  // so every access is guarded and the counter still works in memory.
+  var storageKey='evi-tznk-guide:practice-seen:v1';
+  var seen={};
+  try{
+    var saved=JSON.parse(localStorage.getItem(storageKey)||'[]');
+    if(Array.isArray(saved)) saved.forEach(function(i){
+      if(Number.isInteger(i) && i>=0 && i<items.length) seen[i]=true;
+    });
+  }catch(e){}
+  items.forEach(function(d,i){
+    if(seen[i]){
+      d.classList.add('completed');
+      d.setAttribute('data-completed','true');
+    }
+  });
+  if(num) num.textContent=Object.keys(seen).length;
+
+  function saveSeen(){
+    try{ localStorage.setItem(storageKey,JSON.stringify(Object.keys(seen).map(Number))); }
+    catch(e){}
+  }
+  items.forEach(function(d,i){
+    d.addEventListener('toggle',function(){
+      if(d.open){
+        seen[i]=true;
+        d.classList.add('completed');
+        d.setAttribute('data-completed','true');
+        saveSeen();
+      }
+      if(num) num.textContent=Object.keys(seen).length;
+    });
+  });
+})();
+</script>
+</body>
+</html>
