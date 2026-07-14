@@ -139,6 +139,8 @@
     margin-left:10px;border-radius:50%;background:var(--good);color:var(--accent-ink);font-size:12px;font-weight:800}
   details.completed[open]{background:linear-gradient(180deg,var(--good-bg),var(--card2));border-color:var(--good)}
   .ans{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);color:var(--ink)}
+  .task-stem{display:block;margin-top:8px;color:var(--ink);font-weight:400;line-height:1.5}
+  .task-options{display:block;margin-top:5px;color:var(--muted)}
   .practice-group{margin:20px 0 28px}
   .practice-group:first-of-type{margin-top:14px}
   .practice-group-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;
@@ -321,13 +323,13 @@
   <table>
     <tr><th>Час</th><th>Що робиш</th></tr>
     <tr><td>0–10 хв</td><td>Формат + стратегія часу (нижче). Прочитай і закрий питання «а що там взагалі буде».</td></tr>
-    <tr><td>10–35 хв</td><td>Арифметика: ділення в стовпчик, %, дроби, прикидка. Прорешай приклади рукою.</td></tr>
+    <tr><td>10–35 хв</td><td>Арифметика: ділення в стовпчик, %, дроби, прикидка. Розв’яжи приклади вручну.</td></tr>
     <tr><td>35–60 хв</td><td>Логіка: кола Ейлера, Діріхле, комбінаторика, таблиці/графіки, аналогії.</td></tr>
     <tr><td>60–80 хв</td><td>Вербальний блок + англійська (техніка читання під тиском часу).</td></tr>
     <tr><td>80–90 хв</td><td>Практичний блок унизу. Вода, туалет, глибокий вдих. Не зубри нове за 10 хв до старту.</td></tr>
   </table>
   <div class="box warn"><b>Головне правило на іспиті:</b> не залипай. Задача не йде за ~60 сек → познач, іди далі, повернись у кінці. Неправильна відповідь коштує стільки ж, скільки пропущена — тому <b>ніколи не лишай порожніх</b>, у кінці вгадуй.</div>
-  <div class="box"><b>Структура посібника:</b> розділи 01–07 охоплюють ЄВІ, розділ 08 — повний курс методології для ЄВВ, розділ 09 — спільна практика з поясненими відповідями.</div>
+  <div class="box"><b>Структура матеріалу:</b> розділи 01–07 охоплюють ЄВІ, розділ 08 — системний курс методології за офіційною програмою ЄВВ, розділ 09 — практика з поясненими відповідями.</div>
 </section>
 
 <section id="format">
@@ -569,12 +571,12 @@
 </section>
 
 <section id="misc">
-  <h2>🎲 Інше, що може попастись</h2>
+  <h2>🎲 Інші типи, що можуть трапитися</h2>
 
   <h3>Середні, частки, відношення</h3>
   <ul>
     <li><b>Середнє арифметичне</b> = сума / кількість. Якщо середнє 5 чисел = 8, їх сума = 40.</li>
-    <li><b>Медіана</b> — середнє за позицією після сортування (для 5 чисел — 3-тє).</li>
+    <li><b>Медіана</b> — центральне значення після сортування. Для непарної кількості це середній елемент; для парної — середнє арифметичне двох центральних. Наприклад, для 2, 4, 9, 15 медіана = (4+9)/2 = 6,5.</li>
     <li><b>Відношення (пропорція):</b> поділили 60 у відношенні 2:3 → частин 5, одна частина 12 → 24 і 36.</li>
     <li><b>«Скільки разів»</b> = ділення; <b>«на скільки»</b> = віднімання. Не плутай.</li>
   </ul>
@@ -659,7 +661,7 @@
   <table>
     <tr><th>Тип</th><th>Структура</th><th>Приклад</th></tr>
     <tr><td>0 (факт)</td><td>If + Present, Present</td><td>If you heat ice, it melts.</td></tr>
-    <tr><td>1 (реальне майб.)</td><td>If + Present, will + V</td><td>If it rains, I will stay.</td></tr>
+    <tr><td>1 (реальне майбутнє)</td><td>If + Present, will + V</td><td>If it rains, I will stay.</td></tr>
     <tr><td>2 (нереальне тепер)</td><td>If + Past, would + V</td><td>If I had time, I would help.</td></tr>
     <tr><td>3 (нереальне минуле)</td><td>If + Past Perfect, would have + V3</td><td>If I had known, I would have come.</td></tr>
   </table>
@@ -731,7 +733,7 @@
 </section>
 
 <section id="methodology">
-  <h2>🔬 Методологія наукових досліджень <span class="tag">повний курс ЄВВ</span></h2>
+  <h2>🔬 Методологія наукових досліджень <span class="tag">за програмою ЄВВ</span></h2>
   <div class="box good"><b>Формат ЄВВ-2026:</b> 100 тестових завдань за 150 хвилин. Одна правильна відповідь із чотирьох, 1 бал за правильну, штрафу за помилку немає. Орієнтир — <b>90 секунд на завдання</b>.</div>
 
   <h3>Що вчити за офіційною вагою програми</h3>
@@ -926,7 +928,7 @@
 
   <h3>Фінальна карта повторення</h3>
   <div class="box"><b>Перед повним тестом перевір:</b> чи розрізняєш науку/псевдонауку; факт/гіпотезу/теорію; фундаментальне/прикладне; методологію/метод/методику; емпіричне/теоретичне; спостереження/експеримент; об’єкт/предмет; мету/завдання; первинне/вторинне джерело; фабрикацію/фальсифікацію/плагіат/самоплагіат.</div>
-  <p class="kv"><b>Межі посібника:</b> формулювання стисло передають усі теми офіційної програми. Для звикання до стилю запитань додатково виконай <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">офіційні зразки ЄВВ</a>.</p>
+  <p class="kv"><b>Межі матеріалу:</b> тут стисло подано ключові поняття всіх чотирьох розділів офіційної програми. Для звикання до формулювань і складності обов’язково виконай <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">офіційні зразки ЄВВ</a>.</p>
 </section>
 
 <section id="drill">
@@ -969,11 +971,11 @@
   <details><summary>12. Потяг іде 240 км за 3 год. Скільки за 5 год тією ж швидкістю?</summary>
   <div class="ans">Швидкість 240/3 = 80 км/год. За 5 год: 80·5 = <b>400 км</b>.</div></details>
 
-  <details><summary>13. «Якщо студент склав ЄВІ, він допущений до вступу.» Студент НЕ допущений. Що випливає?</summary>
-  <div class="ans">Контрапозиція: <b>студент НЕ склав ЄВІ</b>. (А ось «допущений ⟹ склав» стверджувати не можна — це обернення.)</div></details>
+  <details><summary>13. За умовою задачі: «Якщо заявка схвалена, заявникові надсилають лист». Листа не надіслано. Що логічно випливає?</summary>
+  <div class="ans"><b>Заявку не схвалено.</b> Позначимо: A = «схвалена», B = «лист надіслано». Маємо A→B і ¬B, отже ¬A — це контрапозиція (модус толленс). Із самого B не можна було б вивести A: лист могли надіслати з іншої причини.</div></details>
 
-  <details><summary>14. «Усі кактуси — рослини. Ця рослина — не кактус.» Який висновок валідний?</summary>
-  <div class="ans"><b>Жодного нового висновку про належність до інших груп зробити не можна.</b> Уже відомо, що це рослина й не кактус; з «не кактус» не випливає «не рослина» — це помилка заперечення передумови.</div></details>
+  <details><summary>14. «Усі кактуси — рослини. Цей об’єкт — рослина». Чи обов’язково він є кактусом?</summary>
+  <div class="ans"><b>Ні.</b> Із «усі кактуси є рослинами» не випливає «усі рослини є кактусами». Рослина може бути дубом, папороттю тощо. Висновок «це кактус» був би хибним оберненням.</div></details>
 
   <details><summary>15. Яка це помилка: «Він програв суперечку, бо погано вдягнений»?</summary>
   <div class="ans"><b>Ad hominem</b> (до людини) — оцінюють особу, а не аргумент.</div></details>
@@ -1045,7 +1047,7 @@
   <div class="ans"><b>Первинне.</b> Воно безпосередньо представляє нові результати. Огляд, що узагальнює інші роботи, є вторинним джерелом.</div></details>
 
   <details><summary>38. Методологія: який розділ офіційної програми має найбільшу вагу?</summary>
-  <div class="ans"><b>«Загальне уявлення про методологію наукового дослідження» — 40–50%.</b> Саме його варто повторювати найдовше.</div></details>
+  <div class="ans"><b>Розділ 2 «Загальне уявлення про методологію наукового дослідження» — 40–50%.</b> Він охоплює методологію, метод і методику, принципи й підходи, рівні пізнання та методи дослідження.</div></details>
 
   <details><summary>39. Який вимір науки ілюструє університет із лабораторіями, посадами та правилами рецензування?</summary>
   <div class="ans"><b>Наука як соціальний інститут:</b> ідеться про організації, ролі, норми та комунікацію спільноти.</div></details>
@@ -1062,8 +1064,8 @@
   <details><summary>43. «Можливе пояснення, яке ще потрібно перевірити» — проблема, гіпотеза чи закон?</summary>
   <div class="ans"><b>Гіпотеза.</b> Проблема формулює дефіцит знання; закон описує встановлений необхідний зв’язок.</div></details>
 
-  <details><summary>44. Яка послідовність коректна: виконання → проблема → оприлюднення → підготовка?</summary>
-  <div class="ans"><b>Ні.</b> Коректно: проблема → підготовка → виконання й аналіз → оприлюднення → обговорення та уточнення.</div></details>
+  <details><summary>44. Розташуйте етапи дослідження: підготовка; оприлюднення; визначення проблеми; виконання й аналіз; обговорення та уточнення.</summary>
+  <div class="ans"><b>Визначення проблеми → підготовка → виконання й аналіз → оприлюднення → обговорення та уточнення.</b> Спершу з’ясовують, чого бракує знанню; далі планують і виконують роботу; лише отримані результати оприлюднюють та уточнюють після критики.</div></details>
 
   <details><summary>45. Відкритий репозиторій даних належить до відкритих знань чи відкритої інфраструктури?</summary>
   <div class="ans"><b>Репозиторій як сервіс — відкрита інфраструктура;</b> опублікований у ньому набір даних — відкриті наукові знання.</div></details>
@@ -1142,6 +1144,62 @@
 
   <details><summary>70. У публікації є результати й висновки, але не описано методи. Чому це проблема?</summary>
   <div class="ans">Без методів неможливо належно оцінити обґрунтованість і <b>відтворити</b> дослідження; повна наукова публікація структуровано подає проблему, методи, результати й висновки.</div></details>
+
+  <details data-category="tznk"><summary>Мікротекст: логічний зв’язок
+    <span class="task-stem">Одне спостереження не доводить загального правила. ___, воно може підказати гіпотезу для подальшої перевірки.<span class="task-options">А Отже · Б Однак · В Наприклад · Г Тому</span></span>
+  </summary><div class="ans"><b>Б — «Однак».</b> Перше речення обмежує доказову силу спостереження, а друге протиставляє цьому його корисну роль. «Отже» і «тому» вводили б наслідок, якого тут немає; «наприклад» мало б вводити конкретний випадок.</div></details>
+
+  <details data-category="tznk"><summary>Парні тексти: у чому розходяться автори?
+    <span class="task-stem"><b>Текст А:</b> в одній ІТ-компанії після переходу на дистанційну роботу продуктивність зросла на 12%; автор називає дистанційний формат причиною зростання. <b>Текст Б:</b> аналіз 80 компаній показав, що після врахування посад і попередньої продуктивності сталого зв’язку з форматом роботи немає.<span class="task-options">А Чи зросла продуктивність у першій компанії · Б Чи можна узагальнити причинний висновок · В Чи існує дистанційна робота · Г Чи потрібно вимірювати продуктивність</span></span>
+  </summary><div class="ans"><b>Б.</b> Автор А переходить від одного спостереження до причинного узагальнення. Автор Б заперечує стійкість такого зв’язку після контролю інших чинників. Сам факт зростання в першій компанії вони не оспорюють; розходження стосується причинності й узагальнення.</div></details>
+
+  <details data-category="tznk"><summary>Таблиця: прочитайте дані й порахуйте повністю
+    <span class="task-stem">Курс А: 40 учасників, завершили 75%; курс Б: 60, завершили 60%; курс В: 50, завершили 80%. Який курс має найбільше завершень і скільки людей загалом завершили всі три курси?<span class="task-options">А А і 100 · Б Б і 106 · В В і 106 · Г В і 115</span></span>
+  </summary><div class="ans"><b>В — курс В і 106 людей.</b> Рахуємо абсолютні числа, не порівнюємо лише відсотки: А = 40·0,75 = 30; Б = 60·0,60 = 36; В = 50·0,80 = 40. Найбільше 40 у В; разом 30+36+40 = <b>106</b>.</div></details>
+
+  <details data-category="tznk"><summary>Розміщення з обмеженнями: який порядок можливий?
+    <span class="task-stem">П’ятеро спікерів А, Б, В, Г, Д виступають по одному. А раніше за Б; Г одразу після В; Д не перший.<span class="task-options">А Д–А–Б–В–Г · Б В–Г–Б–А–Д · В А–В–Г–Д–Б · Г Б–А–В–Г–Д</span></span>
+  </summary><div class="ans"><b>В: А–В–Г–Д–Б.</b> Перевіряємо всі умови: А стоїть раніше за Б; пара В–Г суміжна й у правильному порядку; Д не перший. У А порушено «Д не перший», у Б і Г Б стоїть раніше за А.</div></details>
+
+  <details data-category="english"><summary>Reading: main purpose
+    <span class="task-stem">A city library extended its opening hours during exams. Attendance rose, but the quiet rooms filled first, while the café area remained partly empty. The library will therefore convert one café zone into additional silent study space next term. What is the main purpose of the text?<span class="task-options">A To complain about café prices · B To explain a decision based on usage data · C To advertise a new examination · D To compare two cities</span></span>
+  </summary><div class="ans"><b>B.</b> The text gives evidence (quiet rooms filled first) and then the resulting decision (convert a café zone). A, C and D introduce ideas that are not stated. The correct option paraphrases the whole text rather than copying one word.</div></details>
+
+  <details data-category="english"><summary>Reading matching: satisfy every condition
+    <span class="task-stem">You need a quiet place with Wi‑Fi that stays open after 9 p.m.<br><b>A Study Hub:</b> silent rooms, Wi‑Fi, open until 10 p.m.<br><b>B Central Café:</b> Wi‑Fi, live music, open until midnight.<br><b>C Reading Room:</b> silent, no internet, closes at 8 p.m. Which option fits?</span>
+  </summary><div class="ans"><b>A — Study Hub.</b> It satisfies all three constraints: quiet, Wi‑Fi and open after 21:00. B fails “quiet”; C fails both Wi‑Fi and opening time. In matching tasks, one attractive feature is not enough—check every condition.</div></details>
+
+  <details data-category="english"><summary>Use of English: sequence of past events
+    <span class="task-stem">By the time the researchers arrived, the volunteers ___ the survey.<span class="task-options">A complete · B had completed · C have completed · D will complete</span></span>
+  </summary><div class="ans"><b>B — had completed.</b> <i>By the time … arrived</i> sets a past reference point; completion happened earlier, so use Past Perfect: <i>had + V3</i>. Past Simple would not mark the earlier event as clearly; Present Perfect cannot be tied to a finished past point.</div></details>
+
+  <details data-category="english"><summary>Use of English: fixed collocation
+    <span class="task-stem">The new evidence ___ light on why the treatment failed.<span class="task-options">A made · B put · C shed · D took</span></span>
+  </summary><div class="ans"><b>C — shed.</b> The fixed expression is <span class="mono">shed light on something</span>, meaning “help explain”. The other verbs do not form this collocation.</div></details>
+
+  <details data-category="english"><summary>Use of English: relative pronoun
+    <span class="task-stem">The device, ___ was developed by a student team, uses very little energy.<span class="task-options">A who · B which · C where · D whose</span></span>
+  </summary><div class="ans"><b>B — which.</b> The antecedent is a thing (<i>device</i>), and the clause supplies extra information between commas. <i>Who</i> refers to people; <i>where</i> to places; <i>whose</i> expresses possession.</div></details>
+
+  <details data-category="methodology"><summary>Властивість інформації: відповідність реальному об’єкту
+    <span class="task-stem">Яка властивість означає, що інформація відповідає реальному об’єкту або явищу?<span class="task-options">А Актуальність · Б Адекватність · В Релевантність · Г Точність</span></span>
+  </summary><div class="ans"><b>Б — адекватність.</b> Адекватність — відповідність об’єкту; релевантність — відповідність інформаційному запиту; актуальність — своєчасність; точність — потрібний ступінь деталізації значень.</div></details>
+
+  <details data-category="methodology"><summary>Функція методу: розкласти проблему на складники
+    <span class="task-stem">Яка функція методу реалізується, коли проблему розкладають на компоненти й виявляють зв’язки між ними?<span class="task-options">А Аналітична · Б Інструментальна · В Експериментально-дослідницька · Г Пізнавальна</span></span>
+  </summary><div class="ans"><b>А — аналітична.</b> Ключова дія — аналіз, тобто розчленування цілого та встановлення зв’язків. Інструментальна функція дає засоби роботи, експериментальна організовує дослідну перевірку, пізнавальна спрямована на отримання знання загалом.</div></details>
+
+  <details data-category="methodology"><summary>Функція теорії: передбачити ще не спостережене
+    <span class="task-stem">Теорія дала змогу передбачити явище, яке пізніше підтвердив експеримент. Яку функцію теорії це ілюструє?<span class="task-options">А Синтетичну · Б Пояснювальну · В Прогностичну · Г Методологічну</span></span>
+  </summary><div class="ans"><b>В — прогностичну.</b> Вона полягає у передбаченні нових фактів або станів. Пояснювальна тлумачить відоме; синтетична об’єднує знання; методологічна спрямовує подальше дослідження.</div></details>
+
+  <details data-category="methodology"><summary>Широке й вузьке розуміння методології
+    <span class="task-stem">Яке твердження правильне?<span class="task-options">А У широкому значенні методологія — лише перелік приладів · Б У вузькому — вчення про методи дослідження · В Методологія тотожна одному методу · Г Методика ширша за методологію</span></span>
+  </summary><div class="ans"><b>Б.</b> У вузькому розумінні методологія є вченням про науковий метод і методи. У широкому — це система загальних принципів, підходів, категорій і способів організації пізнання. Один метод і конкретна методика є вужчими поняттями.</div></details>
+
+  <details data-category="methodology"><summary>Класифікація дослідження за кількістю галузей
+    <span class="task-stem">У проєкті спільно працюють генетики, програмісти й статистики над однією складною проблемою. За кількістю залучених наукових галузей це дослідження…<span class="task-options">А одиничне · Б короткотривале · В комплексне · Г фундаментальне</span></span>
+  </summary><div class="ans"><b>В — комплексне.</b> Критерій у запитанні — кількість залучених галузей. «Одиничне/групове» стосується кількості науковців, «короткотривале» — тривалості, «фундаментальне» — цільового призначення.</div></details>
 
   <hr>
   <p class="kv"><b>Офіційна практика:</b> <a href="https://testportal.gov.ua/pidgotovka-do-yevi-yevv-2026/">сторінка підготовки УЦОЯО</a>, <a href="https://testportal.gov.ua/demonstratsijni-varianty-yevi/">демонстраційні варіанти ЄВІ</a> та <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">зразки й характеристика ЄВВ</a>. Для ЄВІ відпрацюй окремі слабкі типи; для ЄВВ виконай щонайменше один повний прогін 100 завдань за 150 хвилин.</p>
@@ -1280,7 +1338,7 @@
     };
     items.forEach(function(item,index){
       var number=index+1;
-      var key=number>=31?'methodology':([20,21,22,23,26,27].indexOf(number)>-1?'english':'tznk');
+      var key=item.getAttribute('data-category') || (number>=31?'methodology':([20,21,22,23,26,27].indexOf(number)>-1?'english':'tznk'));
       groups[key].items.push(item);
     });
     var firstItem=items[0];
@@ -1297,7 +1355,14 @@
       title.id='practice-'+key+'-title';
       title.innerHTML='<span>'+data.title+'</span><span class="practice-group-count">'+data.items.length+' завд.</span>';
       group.appendChild(title);
-      data.items.forEach(function(item){group.appendChild(item);});
+      data.items.forEach(function(item,itemIndex){
+        var summary=item.querySelector('summary');
+        if(summary){
+          var first=summary.firstChild;
+          if(first && first.nodeType===3){ first.nodeValue=(itemIndex+1)+'. '+first.nodeValue.replace(/^\s*\d+\.\s*/,'').trimStart(); }
+        }
+        group.appendChild(item);
+      });
       groupsRoot.appendChild(group);
     });
   }
