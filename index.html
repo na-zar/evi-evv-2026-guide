@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЄВІ + ЄВВ 2026 — Повна підготовка</title>
+<title>ЄВВ 2026 — Методологія наукових досліджень</title>
 <script>
 (function(){
   var key='evi-tznk-guide:theme:v1', theme='';
@@ -262,13 +262,15 @@
     header{transition:none}
     header.mobile-hidden{transform:none}
   }
+  /* Архівні блоки ЄВІ прибрано з поточної навчальної версії. */
+  #verbal,#logic,#arithmetic,#misc,#eng{display:none}
 </style>
 </head>
 <body>
 <header>
   <div class="hwrap">
     <div class="headline">
-      <h1>ЄВІ + ЄВВ 2026 — підготовчий матеріал</h1>
+      <h1>ЄВВ 2026 — методологія наукових досліджень</h1>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Увімкнути темну тему" title="Увімкнути темну тему">
         <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>
@@ -279,9 +281,8 @@
         </svg>
       </button>
     </div>
-    <div class="sub">ТЗНК · Англійська мова · Методологія наукових досліджень</div>
+    <div class="sub">Повний підготовчий матеріал · 7 навчальних сесій · практика</div>
     <div class="exam-dates" aria-label="Дати вступних випробувань">
-      <span class="exam-date"><b>ЄВІ</b> 14 липня 2026 · 14:45</span>
       <span class="exam-date"><b>ЄВВ</b> 27 липня 2026 · 10:00</span>
     </div>
   </div>
@@ -290,13 +291,9 @@
   <span class="section-track" aria-hidden="true"><span id="sectionTrackFill" class="section-track-fill"></span></span>
   <a class="section-dot" href="#plan" aria-label="План"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">01</span><span>План</span><span class="section-progress-value"></span></span></a>
   <a class="section-dot" href="#format" aria-label="Формат"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">02</span><span>Формат</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#verbal" aria-label="Вербальний блок"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">03</span><span>Вербальний</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#logic" aria-label="Логіка"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">04</span><span>Логіка</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#arithmetic" aria-label="Арифметика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">05</span><span>Арифметика</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#misc" aria-label="Інше"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">06</span><span>Інше</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#eng" aria-label="Англійська"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">07</span><span>Англійська</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#methodology" aria-label="Методологія"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">08</span><span>Методологія</span><span class="section-progress-value"></span></span></a>
-  <a class="section-dot" href="#drill" aria-label="Практика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">09</span><span>Практика</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#methodology" aria-label="Теорія"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">03</span><span>Теорія</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#drill" aria-label="Практика"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">04</span><span>Практика</span><span class="section-progress-value"></span></span></a>
+  <a class="section-dot" href="#checklist" aria-label="Чекліст"><span class="section-dot-mark"></span><span class="section-dot-label"><span class="section-number">05</span><span>Чекліст</span><span class="section-progress-value"></span></span></a>
 </nav>
 <div class="mobile-bottom-dock">
   <div class="mobile-section-nav">
@@ -307,8 +304,7 @@
       <span class="mobile-progress-track" aria-hidden="true"><span id="mobileProgressFill" class="mobile-progress-fill"></span></span>
     </button>
     <div id="mobileSectionMenu" class="mobile-section-menu" hidden>
-      <a href="#plan">01 · План</a><a href="#format">02 · Формат</a><a href="#verbal">03 · Вербальний</a><a href="#logic">04 · Логіка</a>
-      <a href="#arithmetic">05 · Арифметика</a><a href="#misc">06 · Інше</a><a href="#eng">07 · Англійська</a><a href="#methodology">08 · Методологія</a><a href="#drill">09 · Практика</a>
+      <a href="#plan">01 · План</a><a href="#format">02 · Формат</a><a href="#methodology">03 · Теорія</a><a href="#drill">04 · Практика</a><a href="#checklist">05 · Чекліст</a>
     </div>
   </div>
   <button id="top" title="Нагору" aria-label="Нагору">↑</button>
@@ -318,41 +314,24 @@
 <main>
 
 <section id="plan">
-  <h2>⏱️ Експрес-повторення ЄВІ за 1–2 години</h2>
-  <p class="big">Не намагайся вивчити все. Мета — <b>розігріти мозок і зняти паніку</b> перед знайомими типами задач.</p>
+  <h2>🗓️ План підготовки за 7 сесій</h2>
+  <p class="big">Мета — пройти всю офіційну програму, закріпити терміни практикою й завершити повним тестом у реальному темпі.</p>
   <table>
-    <tr><th>Час</th><th>Що робиш</th></tr>
-    <tr><td>0–10 хв</td><td>Формат + стратегія часу (нижче). Прочитай і закрий питання «а що там взагалі буде».</td></tr>
-    <tr><td>10–35 хв</td><td>Арифметика: ділення в стовпчик, %, дроби, прикидка. Розв’яжи приклади вручну.</td></tr>
-    <tr><td>35–60 хв</td><td>Логіка: кола Ейлера, Діріхле, комбінаторика, таблиці/графіки, аналогії.</td></tr>
-    <tr><td>60–80 хв</td><td>Вербальний блок + англійська (техніка читання під тиском часу).</td></tr>
-    <tr><td>80–90 хв</td><td>Практичний блок унизу. Вода, туалет, глибокий вдих. Не зубри нове за 10 хв до старту.</td></tr>
+    <tr><th>Сесія</th><th>Що опрацювати</th></tr>
+    <tr><td>1</td><td>Формат; наука, ненаука й псевдонаука; критерії та функції науки.</td></tr>
+    <tr><td>2</td><td>Методологія, метод, методика; принципи, підходи та рівні методології.</td></tr>
+    <tr><td>3</td><td>Емпіричний і теоретичний рівні пізнання; класифікація методів.</td></tr>
+    <tr><td>4</td><td>Проблема, тема, мета, завдання, об’єкт, предмет, гіпотеза, новизна.</td></tr>
+    <tr><td>5</td><td>Джерела, інформаційний пошук, відкрита наука та використання ШІ.</td></tr>
+    <tr><td>6</td><td>Етика, академічна доброчесність і наукові публікації.</td></tr>
+    <tr><td>7</td><td>45 завдань цього матеріалу, розбір помилок і повний офіційний зразок 100/150 хв.</td></tr>
   </table>
-  <div class="box warn"><b>Головне правило на іспиті:</b> не залипай. Задача не йде за ~60 сек → познач, іди далі, повернись у кінці. Неправильна відповідь коштує стільки ж, скільки пропущена — тому <b>ніколи не лишай порожніх</b>, у кінці вгадуй.</div>
-  <div class="box"><b>Структура матеріалу:</b> розділи 01–07 охоплюють ЄВІ, розділ 08 — системний курс методології за офіційною програмою ЄВВ, розділ 09 — практика з поясненими відповідями.</div>
+  <div class="box warn"><b>Режим сесії:</b> 45–75 хв теорії → 15–25 хв тестів → 10 хв на журнал помилок. Не просто перечитуй: пояснюй відмінності між близькими поняттями своїми словами.</div>
+  <div class="box"><b>Структура матеріалу:</b> формат → системний курс за чотирма розділами офіційної програми → 45 завдань із поясненнями → фінальний чекліст.</div>
 </section>
 
 <section id="format">
-  <h2>📋 Формат <span class="tag">знай точно</span></h2>
-  <h3>ЄВІ = ТЗНК + Англійська, разом орієнтовно 120 хв</h3>
-  <p>Для кожного тесту визначено окремий орієнтовний час: <b>75 хв на ТЗНК</b> і <b>45 хв на англійську</b>.</p>
-
-  <h3>ТЗНК — 2 компоненти</h3>
-  <ul>
-    <li><b>Вербально-комунікативний:</b> завдання 1–4 — заповнення пропусків у мікротекстах (10 підпунктів, до 10 балів).</li>
-    <li><b>Логіко-аналітичний + вербальний:</b> завдання 5–27 — вибір однієї правильної відповіді (23 бали). Тут діаграми, таблиці, графіки, кола Ейлера, комбінаторика, аналогії, числові задачі.</li>
-  </ul>
-  <p class="kv">Кожне правильне = 1 бал (у мікротекстах — по 1 за підпункт). Штрафу за помилку немає.</p>
-
-  <h3>Англійська — 30 завдань, 45 хв</h3>
-  <ul>
-    <li><b>Reading (Читання):</b> 6 завдань на встановлення відповідності та 5 — з вибором однієї відповіді.</li>
-    <li><b>Use of English:</b> 19 завдань на заповнення пропусків у тексті (граматика/лексика).</li>
-    <li>Максимум 30 балів, кожне = 1 бал.</li>
-  </ul>
-  <p class="kv"><b>Офіційне джерело:</b> <a href="https://testportal.gov.ua/yedynyj-vstupnyj-ispyt-2026/">характеристика ЄВІ-2026 УЦОЯО</a> (кількість завдань, форми, час і схема нарахування балів).</p>
-
-  <h3>ЄВВ з методології наукових досліджень</h3>
+  <h2>📋 Формат ЄВВ <span class="tag">знай точно</span></h2>
   <p><b>100 завдань · 150 хв · максимум 100 тестових балів.</b> У кожному завданні одна правильна відповідь із чотирьох; помилка або пропуск = 0, штрафу немає.</p>
   <p class="kv"><b>Офіційні джерела:</b> <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">характеристика ЄВВ-2026 УЦОЯО</a> та <a href="https://testportal.gov.ua/wp-content/uploads/2025/05/Programa-yedynogo-vstupnogo-vyprobuvannya-z-metodologiyi-naukovyh-doslidzhen.pdf">програма МОН</a>.</p>
 </section>
@@ -932,8 +911,8 @@
 </section>
 
 <section id="drill">
-  <h2>✍️ Практичний блок — <span id="drillTotal">0</span> задач із відповідями</h2>
-  <p class="kv">Розв'яжи, потім розгорни відповідь. Ціль — швидкість і впевненість, не ідеал.</p>
+  <h2>✍️ Практика з методології — <span id="drillTotal">0</span> завдань</h2>
+  <p class="kv">Спочатку сформулюй відповідь самостійно, потім розгорни пояснення. Для кожної помилки занотуй, які два поняття ти переплутав.</p>
 
   <details><summary>1. Ділення: 8352 ÷ 8 = ?</summary>
   <div class="ans"><b>1044</b>. 8:8=1, 3:8=0(ост.3)→35:8=4(ост.3)→32:8=4. Перевір: 1044·8=8352. ✓</div></details>
@@ -1202,17 +1181,16 @@
   </summary><div class="ans"><b>В — комплексне.</b> Критерій у запитанні — кількість залучених галузей. «Одиничне/групове» стосується кількості науковців, «короткотривале» — тривалості, «фундаментальне» — цільового призначення.</div></details>
 
   <hr>
-  <p class="kv"><b>Офіційна практика:</b> <a href="https://testportal.gov.ua/pidgotovka-do-yevi-yevv-2026/">сторінка підготовки УЦОЯО</a>, <a href="https://testportal.gov.ua/demonstratsijni-varianty-yevi/">демонстраційні варіанти ЄВІ</a> та <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">зразки й характеристика ЄВВ</a>. Для ЄВІ відпрацюй окремі слабкі типи; для ЄВВ виконай щонайменше один повний прогін 100 завдань за 150 хвилин.</p>
+  <p class="kv"><b>Офіційна практика:</b> <a href="https://testportal.gov.ua/pidgotovka-do-yevi-yevv-2026/">сторінка підготовки УЦОЯО</a> та <a href="https://testportal.gov.ua/yedyne-vstupne-vyprobuvannya-2026/">зразки й характеристика ЄВВ</a>. Після цього блоку виконай щонайменше один повний прогін: 100 завдань за 150 хвилин.</p>
 </section>
 
-<section>
+<section id="checklist">
   <h2>🎯 Останнє перед стартом</h2>
   <div class="chk">✅ <span>Прийди завчасно: допуск починається за 30 хв і припиняється за 5 хв до початку.</span></div>
   <div class="chk">✅ <span>Обов’язково: оригінал екзаменаційного листка та документ, що посвідчує особу (або його цифровий аналог у Дії).</span></div>
   <div class="chk">✅ <span>Бажано: запрошення-перепустка, 2–3 ручки з чорним чорнилом, прозора пляшка води без етикетки, теплий одяг.</span></div>
-  <div class="chk">✅ <span>Розподілив час: ТЗНК ~75 хв, англійська ~45 хв. Слідкуй за годинником.</span></div>
-  <div class="chk">✅ <span>Малюй кола Ейлера й стовпчики на чернетці — не тримай у голові.</span></div>
-  <div class="chk">✅ <span>Не залипай &gt;1 хв. Позначай і йди далі.</span></div>
+  <div class="chk">✅ <span>Орієнтир — 90 секунд на завдання; після 75 хв перевір, чи пройдено приблизно половину тесту.</span></div>
+  <div class="chk">✅ <span>Не залипай: познач складне завдання, переходь далі й повернися після першого проходу.</span></div>
   <div class="chk">✅ <span>Жодної порожньої клітинки — в кінці вгадай серед 2 найкращих варіантів.</span></div>
   <div class="chk">✅ <span>Останні 5 хв — перевір, що всі відповіді вибрано й збережено в системі.</span></div>
   <div class="chk">✅ <span>Чернетку нададуть у пункті. За технічної проблеми або погіршення самопочуття одразу поклич інструктора.</span></div>
@@ -1220,7 +1198,7 @@
   <div class="box good big">Ти вже знаєш більше, ніж думаєш. Завдання — не панікувати й акуратно зібрати «свої» бали. Успіху 💪</div>
 </section>
 
-<div class="foot">Складено 14.07.2026 · матеріал для швидкої підготовки · не офіційний документ УЦОЯО</div>
+<div class="foot">Оновлено 14.07.2026 · підготовчий матеріал до ЄВВ · не офіційний документ УЦОЯО</div>
 </main>
 
 <script>
@@ -1327,25 +1305,25 @@
 
   // practice counter — count opened <details> inside #drill
   var drill=document.getElementById('drill');
-  var items=drill?[].slice.call(drill.querySelectorAll('details')):[];
-  // Group practice visually while keeping `items` in its original order so
-  // previously stored completion indexes remain compatible.
+  var allItems=drill?[].slice.call(drill.querySelectorAll('details')):[];
+  // Поточна версія присвячена лише ЄВВ: архівні вправи ЄВІ вилучаємо з DOM.
+  allItems.forEach(function(item,index){
+    var category=item.getAttribute('data-category');
+    if(!category) category=index>=30?'methodology':'evi';
+    if(category==='methodology') item.setAttribute('data-category','methodology');
+    else item.remove();
+  });
+  var items=drill?[].slice.call(drill.querySelectorAll('details[data-category="methodology"]')):[];
   if(drill && items.length){
-    var groups={
-      tznk:{title:'🧠 ТЗНК',items:[]},
-      english:{title:'🇬🇧 Англійська мова',items:[]},
-      methodology:{title:'🔬 Методологія наукових досліджень',items:[]}
-    };
+    var groups={methodology:{title:'🔬 Методологія наукових досліджень',items:[]}};
     items.forEach(function(item,index){
-      var number=index+1;
-      var key=item.getAttribute('data-category') || (number>=31?'methodology':([20,21,22,23,26,27].indexOf(number)>-1?'english':'tznk'));
-      groups[key].items.push(item);
+      groups.methodology.items.push(item);
     });
     var firstItem=items[0];
     var groupsRoot=document.createElement('div');
     groupsRoot.className='practice-groups';
     drill.insertBefore(groupsRoot,firstItem);
-    ['tznk','english','methodology'].forEach(function(key){
+    ['methodology'].forEach(function(key){
       var data=groups[key];
       var group=document.createElement('div');
       group.className='practice-group practice-group-'+key;
@@ -1382,7 +1360,7 @@
 
   // Persist completed practice items. Storage can be unavailable for local files,
   // so every access is guarded and the counter still works in memory.
-  var storageKey='evi-tznk-guide:practice-seen:v1';
+  var storageKey='evv-methodology-guide:practice-seen:v1';
   var seen={};
   try{
     var saved=JSON.parse(localStorage.getItem(storageKey)||'[]');
