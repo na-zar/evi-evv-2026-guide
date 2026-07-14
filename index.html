@@ -212,14 +212,19 @@
   @media(max-width:1240px){
     .section-rail{display:none}
     main{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
-    .mobile-bottom-dock{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:46;
-      display:flex;align-items:center;width:min(360px,calc(100vw - 20px));min-height:54px;padding:4px;
-      transform:translateX(-50%);border:1px solid color-mix(in srgb,var(--line) 82%,transparent);border-radius:28px;
+    .mobile-bottom-dock{position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:46;
+      display:flex;align-items:center;width:max-content;max-width:calc(100vw - 20px);min-height:54px;padding:4px;
+      border:1px solid color-mix(in srgb,var(--line) 82%,transparent);border-radius:28px;
       background:color-mix(in srgb,var(--counter-bg) 88%,transparent);box-shadow:0 10px 32px var(--shadow),inset 0 1px 0 rgba(255,255,255,.2);
       -webkit-backdrop-filter:blur(18px) saturate(135%);backdrop-filter:blur(18px) saturate(135%)}
-    .mobile-section-nav{display:block;position:relative;flex:1;min-width:0}
+    .mobile-section-nav{display:block;position:relative;flex:0 1 auto;min-width:0}
+    .mobile-section-button{width:auto;max-width:220px;gap:8px}
+    #mobileSectionName{display:block;max-width:138px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .mobile-section-chevron,.mobile-progress-track{display:none}
+    .mobile-section-menu{left:auto;right:-51px;width:min(260px,calc(100vw - 20px))}
     .mobile-bottom-dock #top{position:relative;right:auto;bottom:auto;z-index:auto;flex:0 0 46px;width:46px;height:46px;
-      border:0;border-left:1px solid var(--line);border-radius:0 23px 23px 0;background:transparent;box-shadow:none}
+      border:0;border-left:1px solid var(--line);border-radius:0 23px 23px 0;background:transparent;box-shadow:none;
+      opacity:1;pointer-events:auto}
     #counter{display:none}
   }
   @media(prefers-reduced-transparency:reduce){
@@ -232,7 +237,11 @@
   #top.show{opacity:1;pointer-events:auto}
   #top:hover{border-color:var(--accent);color:var(--accent)}
   @media(max-width:600px){
-    header{padding:15px 10px 11px}
+    header{padding:15px 10px 11px;transition:transform .22s ease,padding .22s ease}
+    header.mobile-compact{padding:7px 10px}
+    header.mobile-compact .sub,header.mobile-compact .exam-dates{display:none}
+    header.mobile-compact h1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px;line-height:40px}
+    header.mobile-hidden{transform:translateY(-105%)}
     main{padding:14px 10px calc(96px + env(safe-area-inset-bottom,0px))}
     section{padding:16px 13px;margin:12px 0;border-radius:14px;scroll-margin-top:104px}
     h1{font-size:20px}
@@ -246,6 +255,10 @@
     .formula{justify-content:flex-start;min-height:58px;padding:10px 12px}
     .formula math{font-size:1.08rem}
     .column-calc{padding:14px 18px}
+  }
+  @media(max-width:600px) and (prefers-reduced-motion:reduce){
+    header{transition:none}
+    header.mobile-hidden{transform:none}
   }
 </style>
 </head>
@@ -1165,6 +1178,8 @@
   var mobileSectionButton=document.getElementById('mobileSectionButton');
   var mobileSectionMenu=document.getElementById('mobileSectionMenu');
   var mobileSectionNav=document.querySelector('.mobile-section-nav');
+  var pageHeader=document.querySelector('header');
+  var lastScroll=0;
   var themeKey='evi-tznk-guide:theme:v1';
   var themeToggle=document.getElementById('themeToggle');
 
@@ -1194,6 +1209,21 @@
     if(mobileProgressFill) mobileProgressFill.style.width=pct+'%';
     if(mobileSectionPercent) mobileSectionPercent.textContent=pctText;
     top.classList.toggle('show', sc>400);
+    if(pageHeader && window.matchMedia('(max-width:600px)').matches){
+      var compact=sc>110;
+      var delta=sc-lastScroll;
+      pageHeader.classList.toggle('mobile-compact',compact);
+      if(!compact){
+        pageHeader.classList.remove('mobile-hidden');
+      }else if(delta>6 && sc>180){
+        pageHeader.classList.add('mobile-hidden');
+      }else if(delta<-6){
+        pageHeader.classList.remove('mobile-hidden');
+      }
+    }else if(pageHeader){
+      pageHeader.classList.remove('mobile-compact','mobile-hidden');
+    }
+    lastScroll=sc;
     // active nav
     var idx=0, y=sc+140;
     for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) idx=i; }
